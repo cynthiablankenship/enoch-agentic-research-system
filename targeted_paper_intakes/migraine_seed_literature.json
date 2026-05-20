@@ -1,0 +1,34 @@
+[
+  {
+    "source_id": "seed-migraine-sleep-001",
+    "source_kind": "seed_literature_stub",
+    "title": "Sleep disruption and migraine frequency",
+    "abstract": "Migraine and headache cohorts frequently discuss sleep disruption, insomnia, and circadian timing changes around attack patterns. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+    "url": "",
+    "year": "seed"
+  },
+  {
+    "source_id": "seed-migraine-caffeine-001",
+    "source_kind": "seed_literature_stub",
+    "title": "Caffeine exposure, withdrawal, and headache recurrence",
+    "abstract": "Migraine literature includes mixed discussion of caffeine exposure, caffeine withdrawal, sleep timing, and headache recurrence. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+    "url": "",
+    "year": "seed"
+  },
+  {
+    "source_id": "seed-migraine-stress-001",
+    "source_kind": "seed_literature_stub",
+    "title": "Stress physiology and migraine attack patterns",
+    "abstract": "Observational migraine literature often discusses stress, anxiety, autonomic arousal, sleep disruption, and headache timing. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+    "url": "",
+    "year": "seed"
+  },
+  {
+    "source_id": "seed-migraine-hormones-001",
+    "source_kind": "seed_literature_stub",
+    "title": "Hormonal timing and recurrent migraine patterns",
+    "abstract": "Migraine literature includes discussion of hormone fluctuation, menstrual timing, estrogen change, and subgroup-specific headache patterns. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+    "url": "",
+    "year": "seed"
+  }
+]

@@ -1,0 +1,322 @@
+{
+  "card_count": 6,
+  "cards": [
+    {
+      "card_id": "migraine-hormones-3f4532",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "he menstrual cycle and pregnancy, and the use of combined hormonal contraception (CHC) or hormone replacement therapy (HRT) can unveil or modify migraine disease. In the general population, 18-25% of female migraineurs display a menstrual association of their headache. Here we pr...",
+          "source_id": "35456034",
+          "title": "Role of Estrogens in Menstrual Migraine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35456034/",
+          "year": "2022"
+        },
+        {
+          "excerpt": "The term menstrual migraine refers to migraine that is associated with menstruation by more than chance, but it does not define pathophysiology. Menstrual migraine affects about 20-25% of female migraineurs in the general population, and 22-70% of patients presenting to headache...",
+          "source_id": "33600767",
+          "title": "Menstrual migraine: a distinct disorder needing greater recognition.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33600767/",
+          "year": "2021"
+        },
+        {
+          "excerpt": "with menstrually related migraine (MRM). The hormonal fluctuations can be stabilized with hormone replacement therapy (HRT), while simultaneously improving the migraine in some patients. The increased stroke risk in women with migraine with aura (MA) should be taken into consider...",
+          "source_id": "24954701",
+          "title": "Migraine and perimenopause.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/24954701/",
+          "year": "2014"
+        },
+        {
+          "excerpt": "e, and hormonal replacement therapy (HRT). Based on clinical experience, the frequency of menstrual migraine has been reported to be as high as 60%-70%. Most women have increased headache and migraine attacks (usually without aura) at the time of menses. Attacks occurring only wi...",
+          "source_id": "10534294",
+          "title": "Menstrual migraine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10534294/",
+          "year": "1999"
+        },
+        {
+          "excerpt": "Menstrually related migraine is a disabling condition affecting 35% to 54% females with migraine during their fertile years. The International Headache Classification distinguishes menstrually related migraine from pure menstrual migraine based on the occurrence of the attacks ev...",
+          "source_id": "38307655",
+          "title": "Menstrually associated migraine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38307655/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "ing the presentation of headache in women in relation to hormonal changes both during the menstrual cycle and throughout the life span is essential for appropriate diagnosis and treatment. Although perimenstrual migraine attacks are generally without aura, the diagnosis of migrai...",
+          "source_id": "34048399",
+          "title": "Headache in Women.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34048399/",
+          "year": "2021"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Hormonal timing may help explain recurrent migraine-pattern subgroups and should be mapped separately from general trigger claims.",
+      "mechanism": "Estrogen fluctuation and neurovascular sensitivity are plausible mechanisms, but subgroup boundaries and confounding are central.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "hormones"
+    },
+    {
+      "card_id": "migraine-caffeine-448240",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "Caffeine causes most of its biological effects via antagonizing all types of adenosine receptors (ARs): A1, A2A, A3, and A2B and, as does adenosine, exerts effects on neurons and glial cells of all brain areas. In consequence, caffeine, when acting as an AR antagonist, is doing t...",
+          "source_id": "20164566",
+          "title": "Caffeine and adenosine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20164566/",
+          "year": "2010"
+        },
+        {
+          "excerpt": "Dietary intake of caffeine has significantly increased in recent years, and beneficial and harmful effects of caffeine have been extensively studied. This paper reviews antioxidant and anti-inflammatory activities of caffeine as well as its protective effects on cardiovascular di...",
+          "source_id": "35574653",
+          "title": "Dietary sources, health benefits, and risks of caffeine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35574653/",
+          "year": "2023"
+        },
+        {
+          "excerpt": "Over the last decade, Food Regulation Authorities have concluded that coffee/caffeine consumption is not harmful if consumed at levels of 200 mg in one sitting (around 2\u00bd cups of coffee) or 400 mg daily (around 5 cups of coffee). In addition, caffeine has many positive actions on...",
+          "source_id": "26677204",
+          "title": "Effects of coffee/caffeine on brain health and disease: What should I tell my patients?",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26677204/",
+          "year": "2016"
+        },
+        {
+          "excerpt": "menstruation by chance. Two pathophysiological mechanisms have been identified: oestrogen withdrawal and prostaglandin release. Although management strategies targeting these mechanisms might be effective, the evidence is not robust. Given how common and debilitating this distinc...",
+          "source_id": "33600767",
+          "title": "Menstrual migraine: a distinct disorder needing greater recognition.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33600767/",
+          "year": "2021"
+        },
+        {
+          "excerpt": "IDs), dihydroergotamine, the triptans, and the combination of aspirin, acetaminophen, and caffeine. The goal of standard continuous preventive therapy is to reduce the frequency, duration, and intensity of attacks. Preventive therapy may eliminate all headaches except those assoc...",
+          "source_id": "10534294",
+          "title": "Menstrual migraine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/10534294/",
+          "year": "1999"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Caffeine exposure or withdrawal may interact with sleep timing to shape migraine attack patterns in some patients.",
+      "mechanism": "Adenosine signaling, withdrawal effects, sleep timing, and acute analgesic co-use may create mixed or bidirectional evidence.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "caffeine"
+    },
+    {
+      "card_id": "migraine-sleep-180e3b",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "th GABA-A receptors. Caffeine, through antagonism of ARs, affects brain functions such as sleep, cognition, learning, and memory, and modifies brain dysfunctions and diseases: Alzheimer's disease, Parkinson's disease, Huntington's disease, Epilepsy, Pain/Migraine, Depression, Sch...",
+          "source_id": "20164566",
+          "title": "Caffeine and adenosine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/20164566/",
+          "year": "2010"
+        },
+        {
+          "excerpt": "addition, we summarize the side effects of long-term or excessive caffeine consumption on sleep, migraine, intraocular pressure, pregnant women, children, and adolescents. The health benefits of caffeine depend on the amount of caffeine intake and the physical condition of consum...",
+          "source_id": "35574653",
+          "title": "Dietary sources, health benefits, and risks of caffeine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35574653/",
+          "year": "2023"
+        },
+        {
+          "excerpt": "d well-being, help concentration, improve mood and limit depression. Caffeine may disturb sleep, but only in sensitive individuals. It may raise anxiety in a small subset of particularly sensitive people. Caffeine does not seem to lead to dependence, although a minority of people...",
+          "source_id": "26677204",
+          "title": "Effects of coffee/caffeine on brain health and disease: What should I tell my patients?",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26677204/",
+          "year": "2016"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Sleep disruption may define a migraine-vulnerability subgroup worth testing through literature review and non-interventional diary analysis.",
+      "mechanism": "Circadian disruption, fragmented sleep, stress physiology, and altered pain-threshold regulation are plausible connecting mechanisms.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "sleep"
+    },
+    {
+      "card_id": "migraine-diet-8b613e",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "Dietary intake of caffeine has significantly increased in recent years, and beneficial and harmful effects of caffeine have been extensively studied. This paper reviews antioxidant and anti-inflammatory activities of caffeine as well as its protective effects on cardiovascular di...",
+          "source_id": "35574653",
+          "title": "Dietary sources, health benefits, and risks of caffeine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35574653/",
+          "year": "2023"
+        },
+        {
+          "excerpt": "zure occurrence. Thus, daily coffee and caffeine intake can be part of a healthy balanced diet; its consumption does not need to be stopped in elderly people.",
+          "source_id": "26677204",
+          "title": "Effects of coffee/caffeine on brain health and disease: What should I tell my patients?",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26677204/",
+          "year": "2016"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Diet, hydration, and fasting claims may be better handled as individualized pattern hypotheses than universal migraine triggers.",
+      "mechanism": "Meal timing, hydration, glucose variability, and recall bias can all influence apparent diet-trigger relationships.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "diet"
+    },
+    {
+      "card_id": "migraine-cgrp-431500",
+      "confidence": "low",
+      "evidence_for": [
+        {
+          "excerpt": "al replacement for concomitant conditions. Few data are available on treatments targeting CGRP, among whom gepants are the most promising because of their utility both in migraine acute and preventive treatment. A greater recognition of disease and a deep knowledge of patients' c...",
+          "source_id": "38307655",
+          "title": "Menstrually associated migraine.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38307655/",
+          "year": "2024"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "CGRP-pathway literature may reveal mechanism-specific migraine subgroups for evidence mapping, not treatment selection.",
+      "mechanism": "CGRP signaling connects trigeminovascular activation, neurogenic inflammation, and pain transmission, but treatment claims require clinical review.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "cgrp"
+    },
+    {
+      "card_id": "migraine-stress-b899ab",
+      "confidence": "low",
+      "evidence_for": [
+        {
+          "excerpt": "t depression. Caffeine may disturb sleep, but only in sensitive individuals. It may raise anxiety in a small subset of particularly sensitive people. Caffeine does not seem to lead to dependence, although a minority of people experience withdrawal symptoms. Caffeine can potentiat...",
+          "source_id": "26677204",
+          "title": "Effects of coffee/caffeine on brain health and disease: What should I tell my patients?",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/26677204/",
+          "year": "2016"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Stress-related physiology may be a mediator rather than a standalone migraine trigger in some literature clusters.",
+      "mechanism": "Autonomic arousal, sleep disruption, cortisol patterns, and behavioral confounding may connect stress with migraine frequency.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "stress"
+    }
+  ],
+  "generated_at": "2026-05-20T15:15:18.058351+00:00",
+  "mode": "literature_only_research_prototype",
+  "runtime_effect": "none",
+  "safety_boundary": {
+    "allowed": [
+      "literature_review",
+      "retrospective_deidentified_analysis",
+      "synthetic_data_simulation",
+      "wellness_diary_observation"
+    ],
+    "forbidden": [
+      "diagnosis",
+      "treatment recommendations",
+      "medication or supplement changes",
+      "human-subject experiments without IRB or equivalent review",
+      "animal experiments",
+      "self-experimentation beyond non-interventional wellness diary observation"
+    ]
+  },
+  "schema_version": "medical_enoch_migraine_workbench_v1",
+  "source_count": 10,
+  "topic": "migraine"
+}

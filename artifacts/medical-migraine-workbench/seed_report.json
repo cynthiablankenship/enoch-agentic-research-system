@@ -1,0 +1,183 @@
+{
+  "card_count": 4,
+  "cards": [
+    {
+      "card_id": "migraine-sleep-180e3b",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "Migraine and headache cohorts frequently discuss sleep disruption, insomnia, and circadian timing changes around attack patterns. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-sleep-001",
+          "title": "Sleep disruption and migraine frequency",
+          "url": "",
+          "year": "seed"
+        },
+        {
+          "excerpt": "Migraine literature includes mixed discussion of caffeine exposure, caffeine withdrawal, sleep timing, and headache recurrence. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-caffeine-001",
+          "title": "Caffeine exposure, withdrawal, and headache recurrence",
+          "url": "",
+          "year": "seed"
+        },
+        {
+          "excerpt": "Observational migraine literature often discusses stress, anxiety, autonomic arousal, sleep disruption, and headache timing. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-stress-001",
+          "title": "Stress physiology and migraine attack patterns",
+          "url": "",
+          "year": "seed"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Sleep disruption may define a migraine-vulnerability subgroup worth testing through literature review and non-interventional diary analysis.",
+      "mechanism": "Circadian disruption, fragmented sleep, stress physiology, and altered pain-threshold regulation are plausible connecting mechanisms.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "sleep"
+    },
+    {
+      "card_id": "migraine-caffeine-448240",
+      "confidence": "low",
+      "evidence_for": [
+        {
+          "excerpt": "Migraine literature includes mixed discussion of caffeine exposure, caffeine withdrawal, sleep timing, and headache recurrence. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-caffeine-001",
+          "title": "Caffeine exposure, withdrawal, and headache recurrence",
+          "url": "",
+          "year": "seed"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Caffeine exposure or withdrawal may interact with sleep timing to shape migraine attack patterns in some patients.",
+      "mechanism": "Adenosine signaling, withdrawal effects, sleep timing, and acute analgesic co-use may create mixed or bidirectional evidence.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "caffeine"
+    },
+    {
+      "card_id": "migraine-hormones-3f4532",
+      "confidence": "low",
+      "evidence_for": [
+        {
+          "excerpt": "Migraine literature includes discussion of hormone fluctuation, menstrual timing, estrogen change, and subgroup-specific headache patterns. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-hormones-001",
+          "title": "Hormonal timing and recurrent migraine patterns",
+          "url": "",
+          "year": "seed"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Hormonal timing may help explain recurrent migraine-pattern subgroups and should be mapped separately from general trigger claims.",
+      "mechanism": "Estrogen fluctuation and neurovascular sensitivity are plausible mechanisms, but subgroup boundaries and confounding are central.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "hormones"
+    },
+    {
+      "card_id": "migraine-stress-b899ab",
+      "confidence": "low",
+      "evidence_for": [
+        {
+          "excerpt": "Observational migraine literature often discusses stress, anxiety, autonomic arousal, sleep disruption, and headache timing. This seed record is for workflow testing only and should be replaced with real PubMed or PubMed Central records before research use.",
+          "source_id": "seed-migraine-stress-001",
+          "title": "Stress physiology and migraine attack patterns",
+          "url": "",
+          "year": "seed"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality.",
+        "Abstract-only records may omit methods, population details, effect sizes, and negative findings.",
+        "Human-subject, animal, medication, and treatment changes are outside this prototype.",
+        "Evidence set is small; treat this as a search direction, not a finding."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Stress-related physiology may be a mediator rather than a standalone migraine trigger in some literature clusters.",
+      "mechanism": "Autonomic arousal, sleep disruption, cortisol patterns, and behavioral confounding may connect stress with migraine frequency.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "wellness_diary_observation"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, supplement, animal, or human-subject experiment guidance.",
+      "topic": "stress"
+    }
+  ],
+  "generated_at": "2026-05-20T15:10:36.776148+00:00",
+  "mode": "literature_only_research_prototype",
+  "runtime_effect": "none",
+  "safety_boundary": {
+    "allowed": [
+      "literature_review",
+      "retrospective_deidentified_analysis",
+      "synthetic_data_simulation",
+      "wellness_diary_observation"
+    ],
+    "forbidden": [
+      "diagnosis",
+      "treatment recommendations",
+      "medication or supplement changes",
+      "human-subject experiments without IRB or equivalent review",
+      "animal experiments",
+      "self-experimentation beyond non-interventional wellness diary observation"
+    ]
+  },
+  "schema_version": "medical_enoch_migraine_workbench_v1",
+  "source_count": 4,
+  "topic": "migraine"
+}

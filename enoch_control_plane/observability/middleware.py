@@ -2,9 +2,18 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-import resource
 import time
 from typing import Any, Callable
+
+try:
+    import resource
+except ModuleNotFoundError:  # pragma: no cover - Windows compatibility
+    resource = None
+
+try:
+    import psutil
+except ModuleNotFoundError:  # pragma: no cover - optional runtime fallback
+    psutil = None
 
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
@@ -16,6 +25,10 @@ from enoch_control_plane.models import utc_now
 def peak_rss_mib() -> float:
     """Return process peak RSS in MiB using stdlib-only resource data."""
 
+    if resource is None:
+        if psutil is None:
+            return 0.0
+        return float(psutil.Process().memory_info().rss) / (1024.0 * 1024.0)
     # Linux reports ru_maxrss in KiB. macOS reports bytes, but this service is
     # deployed on Linux; keep the Linux path explicit and harmless elsewhere.
     return float(resource.getrusage(resource.RUSAGE_SELF).ru_maxrss) / 1024.0
@@ -24,6 +37,8 @@ def peak_rss_mib() -> float:
 def current_rss_mib() -> float | None:
     """Return current process RSS in MiB when Linux /proc is available."""
 
+    if psutil is not None:
+        return float(psutil.Process().memory_info().rss) / (1024.0 * 1024.0)
     status_path = Path("/proc/self/status")
     try:
         for line in status_path.read_text(encoding="utf-8").splitlines():
