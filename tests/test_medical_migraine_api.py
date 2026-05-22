@@ -215,4 +215,5 @@ def test_control_dashboard_contains_medical_research_page(tmp_path: Path) -> Non
     assert "Medical Research" in response.text
     assert "loadMedicalSample('migraine')" in response.text
     assert "loadMedicalSample('gi')" in response.text
+    assert "medical-card-grid" in response.text
     assert "/control/api/medical/${kind}/sample-report" in response.text

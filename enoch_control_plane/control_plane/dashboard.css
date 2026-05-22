@@ -88,4 +88,25 @@
     .dialog-panel { padding:24px; display:grid; gap:18px; }
     .dialog-copy { color:var(--muted); white-space:pre-wrap; }
     .dialog-actions { display:flex; justify-content:flex-end; gap:10px; }
+    .medical-report { overflow:visible; }
+    .medical-summary-grid { margin-top:18px; }
+    .medical-card-grid { display:grid; grid-template-columns:repeat(2,minmax(360px,1fr)); gap:18px; align-items:start; }
+    .medical-card { display:grid; gap:16px; padding:22px; overflow:visible; }
+    .medical-card h3 { font-size:1.08rem; line-height:1.3; letter-spacing:0; max-width:68ch; }
+    .medical-card h4 { margin:0 0 8px; font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+    .medical-topic-row { justify-content:space-between; align-items:flex-start; }
+    .medical-topic { font-size:.76rem; text-transform:uppercase; letter-spacing:.05em; }
+    .medical-mechanism { padding:12px 14px; border-left:3px solid var(--info); background:var(--surface-muted); border-radius:0 12px 12px 0; color:var(--muted); }
+    .medical-tests { gap:6px; }
+    .medical-evidence-list { display:grid; gap:10px; }
+    .medical-evidence { padding:13px 14px; border:1px solid var(--line-soft); border-radius:14px; background:var(--surface); box-shadow:var(--shadow-tight); }
+    .medical-evidence-title { display:block; font-size:.94rem; line-height:1.32; letter-spacing:0; color:var(--text); }
+    .medical-evidence-meta { margin-top:4px; font-size:.82rem; }
+    .medical-evidence-excerpt { margin-top:8px; color:var(--muted); font-size:.9rem; line-height:1.45; }
+    .medical-limits { margin:0; padding-left:18px; color:var(--muted); font-size:.9rem; }
+    .medical-limits li + li { margin-top:6px; }
+    .medical-safety { padding:12px 14px; font-size:.9rem; }
+    .medical-actions { margin-top:0; padding-top:4px; }
+    @media (max-width:1200px) { .medical-card-grid { grid-template-columns:1fr; } }
+    @media (max-width:640px) { .medical-card-grid { grid-template-columns:1fr; } .medical-card { padding:18px; } .medical-topic-row { align-items:stretch; } }
 
