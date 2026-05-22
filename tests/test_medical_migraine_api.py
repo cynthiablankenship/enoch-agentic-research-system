@@ -53,6 +53,17 @@ def _record() -> dict[str, str]:
     }
 
 
+def _gi_record() -> dict[str, str]:
+    return {
+        "source_id": "pmid-gi-1",
+        "source_kind": "pubmed",
+        "title": "Colestipol intolerance in bile acid diarrhea",
+        "abstract": "Colestipol and bile acid sequestrants may be associated with gastrointestinal diarrhea, bloating, abdominal pain, intolerance, and nonresponse.",
+        "url": "https://pubmed.ncbi.nlm.nih.gov/2/",
+        "year": "2026",
+    }
+
+
 def test_medical_sample_report_requires_auth_and_returns_cards(tmp_path: Path) -> None:
     client = _client(tmp_path)
 
@@ -133,6 +144,68 @@ def test_medical_review_rejects_invalid_status(tmp_path: Path) -> None:
     assert response.status_code == 400
 
 
+def test_medical_gi_sample_report_requires_auth_and_returns_colestipol_card(tmp_path: Path) -> None:
+    client = _client(tmp_path)
+
+    assert client.get("/control/api/medical/gi/sample-report").status_code == 401
+
+    response = client.get("/control/api/medical/gi/sample-report", headers=_headers())
+
+    assert response.status_code == 200
+    data = response.json()
+    assert data["schema_version"] == "medical_enoch_gi_workbench_v1"
+    assert data["workbench_kind"] == "gi"
+    assert "colestipol_worsening_or_nonresponse" in {card["topic"] for card in data["cards"]}
+    assert data["cards"][0]["review_status"] == "needs_review"
+
+
+def test_medical_gi_fetch_generate_and_review(tmp_path: Path) -> None:
+    client = _client(tmp_path)
+
+    with patch("scripts.fetch_pubmed_migraine.fetch_pubmed_records", return_value=[_gi_record()]) as fetch:
+        fetched = client.post(
+            "/control/api/medical/gi/fetch",
+            headers=_headers(),
+            json={"query": "colestipol diarrhea", "limit": 500},
+        )
+
+    assert fetched.status_code == 200
+    fetched_data = fetched.json()
+    assert fetched_data["record_count"] == 1
+    assert fetched_data["limit"] == 200
+    assert fetched_data["records_path"].startswith("gi_records_")
+    assert (tmp_path / "state" / "medical_workbench" / fetched_data["records_path"]).exists()
+    fetch.assert_called_once()
+
+    generated = client.post(
+        "/control/api/medical/gi/generate",
+        headers=_headers(),
+        json={"records": [_gi_record()], "requested_by": "pytest"},
+    )
+
+    assert generated.status_code == 200
+    report = generated.json()
+    assert report["workbench_kind"] == "gi"
+    assert report["report_path"].startswith("gi_report_")
+    colestipol_card = next(card for card in report["cards"] if card["topic"] == "colestipol_worsening_or_nonresponse")
+    card_id = colestipol_card["card_id"]
+
+    reviewed = client.post(
+        f"/control/api/medical/gi/review/{card_id}",
+        headers=_headers(),
+        json={
+            "report_path": report["report_path"],
+            "review_status": "needs_more_evidence",
+            "reviewed_by": "researcher",
+        },
+    )
+
+    assert reviewed.status_code == 200
+    body = reviewed.json()
+    assert body["review_status"] == "needs_more_evidence"
+    assert body["report"]["workbench_kind"] == "gi"
+
+
 def test_control_dashboard_contains_medical_research_page(tmp_path: Path) -> None:
     client = _client(tmp_path)
 
@@ -140,4 +213,6 @@ def test_control_dashboard_contains_medical_research_page(tmp_path: Path) -> Non
 
     assert response.status_code == 200
     assert "Medical Research" in response.text
-    assert "/control/api/medical/migraine/sample-report" in response.text
+    assert "loadMedicalSample('migraine')" in response.text
+    assert "loadMedicalSample('gi')" in response.text
+    assert "/control/api/medical/${kind}/sample-report" in response.text

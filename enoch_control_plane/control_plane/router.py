@@ -161,6 +161,10 @@ def _medical_sample_report_path() -> Path:
     return _repo_root() / "artifacts" / "medical-migraine-workbench" / "pubmed_sample_report.json"
 
 
+def _medical_gi_sample_report_path() -> Path:
+    return _repo_root() / "artifacts" / "medical-gi-workbench" / "bactrim_loose_stools_targeted_report.json"
+
+
 def _medical_report_path(config: GateConfig, name: str) -> Path:
     raw = Path(str(name or ""))
     if raw.is_absolute():
@@ -177,7 +181,7 @@ def _medical_report_path(config: GateConfig, name: str) -> Path:
 
 def _read_json_object(path: Path) -> dict[str, Any]:
     try:
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=f"file not found: {path.name}") from exc
     except (OSError, json.JSONDecodeError) as exc:
@@ -189,7 +193,7 @@ def _read_json_object(path: Path) -> dict[str, Any]:
 
 def _read_json_list(path: Path) -> list[dict[str, Any]]:
     try:
-        value = json.loads(path.read_text(encoding="utf-8"))
+        value = json.loads(path.read_text(encoding="utf-8-sig"))
     except FileNotFoundError as exc:
         raise HTTPException(status_code=404, detail=f"file not found: {path.name}") from exc
     except (OSError, json.JSONDecodeError) as exc:
@@ -220,8 +224,9 @@ def _write_medical_json(path: Path, payload: dict[str, Any] | list[dict[str, Any
     _atomic_write_text(path, json.dumps(payload, indent=2, sort_keys=True) + "\n")
 
 
-def _latest_medical_report(config: GateConfig) -> Path | None:
-    reports = sorted(_medical_workbench_dir(config).glob("migraine_report_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
+def _latest_medical_report(config: GateConfig, prefix: str = "migraine") -> Path | None:
+    safe_prefix = re.sub(r"[^a-zA-Z0-9_-]+", "", str(prefix or "migraine")) or "migraine"
+    reports = sorted(_medical_workbench_dir(config).glob(f"{safe_prefix}_report_*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     return reports[0] if reports else None
 
 
@@ -372,11 +377,13 @@ async function detail(kind,id){renderNav(kind==='project'?'queue:active':kind===
 async function route(){try{beginRoute(); if(token())$('token').value=token(); renderNav((location.hash||'#overview').slice(1).split('?')[0]); if(!token()){$('status').className='pill warn';$('status').textContent='Token required';$('app').className='banner warn';$('app').innerHTML='<strong>Enter the control-plane bearer token to load bounded operator read models.</strong><div class="muted">The dashboard does not call authenticated APIs until a token is saved locally in this browser.</div>';return;} const h=(location.hash||'#overview').slice(1); const routeKey=h.split('?')[0]||'overview'; if(routeKey!=='overview')delete $('app').dataset.page; if(h==='projects'||h.startsWith('projects?')) return projectListPage('projects','all'); if(h.startsWith('queue:')) return queuePage((h.split(':')[1]||'active').split('?')[0]); if(h==='runs'||h.startsWith('runs?')) return runsPage(); if(h==='papers'||h.startsWith('papers?')) return papersPage(); if(h==='corpus') return corpusPage(); if(h==='events'||h.startsWith('events?')) return eventsPage(); if(h==='automation'||h.startsWith('automation?')||h==='reviews'||h.startsWith('reviews?')) return reviewsPage(); if(h==='intake') return intakePage(); if(h==='research') return researchPage(); if(h==='medical') return medicalPage(); if(h==='observability') return observabilityPage(); if(h.startsWith('project:')) return detail('project',encodeURIComponent(decodeURIComponent(h.split(':')[1]||''))); if(h.startsWith('run:')) return detail('run',encodeURIComponent(decodeURIComponent(h.split(':')[1]||''))); if(h.startsWith('paper:')) return detail('paper',encodeURIComponent(decodeURIComponent(h.split(':')[1]||''))); if(h.startsWith('automation:')) return reviewDetail(encodeURIComponent(decodeURIComponent(h.split(':')[1]||''))); if(h.startsWith('review:')) return reviewDetail(encodeURIComponent(decodeURIComponent(h.split(':')[1]||''))); return overviewPage();}catch(e){if(e.name==='AbortError')return; $('status').className='pill bad';$('status').textContent='Error';$('app').className='banner critical';$('app').textContent=e.message;}}
 function medicalStatusPills(report){const topics=[...new Set((report.cards||[]).map(c=>c.topic).filter(Boolean))]; return `<section class="grid">${card('Sources',report.source_count||0,'info','PubMed/literature records')}${card('Hypothesis cards',report.card_count||0,'good','Safety-gated cards')}${card('Topics',topics.length,'info',topics.join(', ')||'none')}${card('Mode',report.mode||'literature_only','warn','No clinical action')}</section>`;}
 function medicalCardHtml(c,reportPath){const evidence=(c.evidence_for||[]).slice(0,3).map(e=>`<div class="card tight"><strong>${esc(e.title||e.source_id)}</strong><div class="muted">${e.year?esc(e.year)+' - ':''}${e.url?`<a href="${esc(e.url)}" target="_blank" rel="noreferrer">PubMed</a>`:esc(e.source_id||'source')}</div><div>${esc(e.excerpt||'')}</div></div>`).join(''); return `<article class="card"><div class="row"><span class="pill info">${esc(titleCase(c.topic))}</span><span class="pill ${statusClass(c.review_status)}">${esc(titleCase(c.review_status||'needs_review'))}</span><span class="pill warn">Human review required</span></div><h3>${esc(c.hypothesis)}</h3><div class="muted">${esc(c.mechanism||'')}</div><div class="row">${(c.safe_next_tests||[]).map(t=>`<span class="pill good">${esc(titleCase(t))}</span>`).join('')}</div><h4>Evidence</h4>${evidence||'<div class="muted">No evidence snippets attached.</div>'}<h4>Limits</h4><ul>${(c.evidence_limits||[]).map(x=>`<li>${esc(x)}</li>`).join('')}</ul><div class="banner warn">${esc(c.safety_label||'Literature-only. Not medical advice.')}</div><div class="toolbar"><button onclick="reviewMedicalCard('${esc(c.card_id)}','approved_for_research_planning','${esc(reportPath||'')}')">Approve for planning</button><button onclick="reviewMedicalCard('${esc(c.card_id)}','needs_more_evidence','${esc(reportPath||'')}')">Needs more evidence</button><button onclick="reviewMedicalCard('${esc(c.card_id)}','rejected','${esc(reportPath||'')}')">Reject</button></div></article>`;}
-function renderMedicalReport(report){const reportPath=report.report_path||''; return `<section class="card"><h2>Medical Research: Migraine Hypothesis Workbench</h2><div class="muted">Literature-only demo for research teams. It generates source-grounded hypotheses and review states, not diagnosis, treatment advice, medication guidance, or human/animal experiment instructions.</div>${medicalStatusPills(report)}<div class="toolbar"><button onclick="loadMedicalSample()">Load sample report</button><button onclick="generateMedicalSample()">Generate from bundled PubMed sample</button><input id="medicalLimit" value="25" placeholder="PubMed limit"/><input id="medicalQuery" placeholder="optional PubMed query"/><button onclick="fetchMedicalPubMed()">Fetch PubMed + generate</button></div><div id="medicalActionStatus" class="banner info">Live generated reports are written under state_dir/medical_workbench.</div><div class="row">${(report.safety_boundary?.forbidden||[]).map(x=>`<span class="pill warn">${esc(x)}</span>`).join('')}</div><h3>Hypothesis cards</h3><div class="grid">${(report.cards||[]).map(c=>medicalCardHtml(c,reportPath)).join('')||'<div class="empty-state">No medical hypothesis cards found.</div>'}</div>${debugBlock('Medical workbench JSON',report)}</section>`;}
-async function loadMedicalSample(){renderNav('medical'); const data=await api('/control/api/medical/migraine/sample-report'); $('status').className='pill info'; $('status').textContent=`Medical Research - sample - ${data.card_count||0} cards`; $('app').className=''; $('app').innerHTML=renderMedicalReport(data);}
-async function generateMedicalSample(){const el=$('medicalActionStatus'); if(el){el.className='banner warn'; el.textContent='Generating state-dir report from bundled PubMed sample...';} const data=await postJson('/control/api/medical/migraine/generate',{requested_by:'dashboard'}); $('status').className='pill good'; $('status').textContent=`Medical Research - generated - ${data.card_count||0} cards`; $('app').innerHTML=renderMedicalReport(data);}
-async function fetchMedicalPubMed(){const el=$('medicalActionStatus'); const query=($('medicalQuery')?.value||'').trim(); const limit=Number($('medicalLimit')?.value||25)||25; if(el){el.className='banner warn'; el.textContent='Fetching PubMed records from NCBI, then generating report...';} const fetched=await postJson('/control/api/medical/migraine/fetch',{query,limit,requested_by:'dashboard'}); const data=await postJson('/control/api/medical/migraine/generate',{records:fetched.records,requested_by:'dashboard'}); $('status').className='pill good'; $('status').textContent=`Medical Research - PubMed ${fetched.record_count||0} records - ${data.card_count||0} cards`; $('app').innerHTML=renderMedicalReport(data);}
-async function reviewMedicalCard(cardId,reviewStatus,reportPath){const result=await postJson('/control/api/medical/migraine/review/'+encodeURIComponent(cardId),{review_status:reviewStatus,report_path:reportPath,reviewed_by:'dashboard'}); $('status').className='pill good'; $('status').textContent=`Medical Research - ${titleCase(reviewStatus)}`; $('app').innerHTML=renderMedicalReport(result.report);}
+function medicalKind(){return window.medicalWorkbenchKind||'migraine';}
+function medicalTitle(kind){return kind==='gi'?'GI / Colestipol Research Workbench':'Migraine Hypothesis Workbench';}
+function renderMedicalReport(report){const reportPath=report.report_path||'', kind=report.workbench_kind||medicalKind(); window.medicalWorkbenchKind=kind; return `<section class="card"><h2>Medical Research: ${esc(medicalTitle(kind))}</h2><div class="muted">Literature-only demo for research teams. It generates source-grounded hypotheses and review states, not diagnosis, treatment advice, medication guidance, or human/animal experiment instructions.</div><div class="toolbar"><button onclick="loadMedicalSample('migraine')">Migraine</button><button onclick="loadMedicalSample('gi')">GI / Colestipol</button></div>${medicalStatusPills(report)}<div class="toolbar"><button onclick="loadMedicalSample('${esc(kind)}')">Load sample report</button><button onclick="generateMedicalSample('${esc(kind)}')">Generate from bundled PubMed sample</button><input id="medicalLimit" value="25" placeholder="PubMed limit"/><input id="medicalQuery" placeholder="optional PubMed query"/><button onclick="fetchMedicalPubMed('${esc(kind)}')">Fetch PubMed + generate</button></div><div id="medicalActionStatus" class="banner info">Live generated reports are written under state_dir/medical_workbench.</div><div class="row">${(report.safety_boundary?.forbidden||[]).map(x=>`<span class="pill warn">${esc(x)}</span>`).join('')}</div><h3>Hypothesis cards</h3><div class="grid">${(report.cards||[]).map(c=>medicalCardHtml(c,reportPath)).join('')||'<div class="empty-state">No medical hypothesis cards found.</div>'}</div>${debugBlock('Medical workbench JSON',report)}</section>`;}
+async function loadMedicalSample(kind='migraine'){window.medicalWorkbenchKind=kind; renderNav('medical'); const data=await api(`/control/api/medical/${kind}/sample-report`); data.workbench_kind=kind; $('status').className='pill info'; $('status').textContent=`Medical Research - ${kind} sample - ${data.card_count||0} cards`; $('app').className=''; $('app').innerHTML=renderMedicalReport(data);}
+async function generateMedicalSample(kind=medicalKind()){const el=$('medicalActionStatus'); if(el){el.className='banner warn'; el.textContent='Generating state-dir report from bundled PubMed sample...';} const data=await postJson(`/control/api/medical/${kind}/generate`,{requested_by:'dashboard'}); data.workbench_kind=kind; $('status').className='pill good'; $('status').textContent=`Medical Research - ${kind} generated - ${data.card_count||0} cards`; $('app').innerHTML=renderMedicalReport(data);}
+async function fetchMedicalPubMed(kind=medicalKind()){const el=$('medicalActionStatus'); const query=($('medicalQuery')?.value||'').trim(); const limit=Number($('medicalLimit')?.value||25)||25; if(el){el.className='banner warn'; el.textContent='Fetching PubMed records from NCBI, then generating report...';} const fetched=await postJson(`/control/api/medical/${kind}/fetch`,{query,limit,requested_by:'dashboard'}); const data=await postJson(`/control/api/medical/${kind}/generate`,{records:fetched.records,requested_by:'dashboard'}); data.workbench_kind=kind; $('status').className='pill good'; $('status').textContent=`Medical Research - ${kind} PubMed ${fetched.record_count||0} records - ${data.card_count||0} cards`; $('app').innerHTML=renderMedicalReport(data);}
+async function reviewMedicalCard(cardId,reviewStatus,reportPath){const kind=medicalKind(); const result=await postJson(`/control/api/medical/${kind}/review/`+encodeURIComponent(cardId),{review_status:reviewStatus,report_path:reportPath,reviewed_by:'dashboard'}); result.report.workbench_kind=kind; $('status').className='pill good'; $('status').textContent=`Medical Research - ${titleCase(reviewStatus)}`; $('app').innerHTML=renderMedicalReport(result.report);}
 async function medicalPage(){renderNav('medical'); $('status').className='pill warn'; $('status').textContent='Medical Research - loading sample'; $('app').className=''; $('app').innerHTML='<section class="card"><h2>Loading Medical Research demo...</h2><div class="muted">Fetching the committed PubMed sample report.</div></section>'; return loadMedicalSample();}
 function autoRefreshCurrentPage(){const h=(location.hash||'#overview').slice(1).split('?')[0]; if(h==='overview'||h==='observability') route();}
 window.addEventListener('hashchange',route); route(); setInterval(autoRefreshCurrentPage,15000);
@@ -2283,6 +2290,102 @@ def create_control_plane_router(config: GateConfig, require_bearer: RequireBeare
                 break
         if not reviewed:
             raise HTTPException(status_code=404, detail=f"medical hypothesis card not found: {card_id}")
+        _write_medical_json(report_path, report)
+        report["report_path"] = report_path.relative_to(_medical_workbench_dir(config)).as_posix()
+        return {"ok": True, "card_id": card_id, "review_status": review_status, "report": report}
+
+    @router.get("/api/medical/gi/sample-report")
+    def medical_gi_sample_report(authorization: str | None = Header(default=None)) -> dict[str, Any]:
+        authorize(authorization)
+        report = _stamp_medical_cards(_read_json_object(_medical_gi_sample_report_path()))
+        report["workbench_kind"] = "gi"
+        return report
+
+    @router.post("/api/medical/gi/fetch")
+    def medical_gi_fetch(payload: dict[str, Any] | None = Body(default=None), authorization: str | None = Header(default=None)) -> dict[str, Any]:
+        authorize(authorization)
+        from scripts.fetch_pubmed_migraine import fetch_pubmed_records
+
+        default_query = (
+            "((chronic diarrhea OR chronic diarrhoea OR loose stool OR IBS-D OR diarrhea-predominant irritable bowel syndrome) "
+            "AND (antibiotic OR trimethoprim OR sulfamethoxazole OR co-trimoxazole OR microbiome OR microbiota OR bile acid "
+            "OR colestipol OR bile acid sequestrant OR progesterone OR omega-3 OR fish oil))"
+        )
+        body = payload or {}
+        query = str(body.get("query") or default_query).strip() or default_query
+        limit = _bounded_int_from_mapping(body, "limit", 25, 1, 200)
+        email = str(body.get("email") or "").strip()
+        api_key = str(body.get("api_key") or "").strip()
+        records = fetch_pubmed_records(query=query, limit=limit, email=email, api_key=api_key)
+        output = _medical_workbench_dir(config) / f"gi_records_{_medical_timestamp()}.json"
+        _write_medical_json(output, [dict(record) for record in records])
+        return {
+            "ok": True,
+            "query": query,
+            "limit": limit,
+            "record_count": len(records),
+            "records": records,
+            "records_path": output.relative_to(_medical_workbench_dir(config)).as_posix(),
+            "runtime_effect": "records_written_to_state_dir",
+        }
+
+    @router.post("/api/medical/gi/generate")
+    def medical_gi_generate(payload: dict[str, Any] | None = Body(default=None), authorization: str | None = Header(default=None)) -> dict[str, Any]:
+        authorize(authorization)
+        from scripts.medical_gi_workbench import LiteratureRecord, build_workbench
+
+        body = payload or {}
+        if isinstance(body.get("records"), list):
+            raw_records = [dict(item) for item in body["records"] if isinstance(item, dict)]
+        elif body.get("records_path"):
+            raw_records = _read_json_list(_medical_report_path(config, str(body.get("records_path"))))
+        else:
+            raw_records = _read_json_list(_repo_root() / "targeted_paper_intakes" / "gi_bactrim_loose_stools_targeted_pubmed_sample.json")
+        records = [
+            LiteratureRecord(
+                source_id=str(row.get("source_id") or row.get("pmid") or row.get("id") or ""),
+                title=str(row.get("title") or ""),
+                abstract=str(row.get("abstract") or row.get("summary") or ""),
+                url=str(row.get("url") or ""),
+                year=str(row.get("year") or ""),
+                source_kind=str(row.get("source_kind") or "pubmed"),
+            )
+            for row in raw_records
+            if str(row.get("title") or "").strip() and str(row.get("abstract") or row.get("summary") or "").strip()
+        ]
+        report = _stamp_medical_cards(build_workbench(records))
+        report["created_by"] = str(body.get("requested_by") or "dashboard")
+        report["workbench_kind"] = "gi"
+        output = _medical_workbench_dir(config) / f"gi_report_{_medical_timestamp()}.json"
+        _write_medical_json(output, report)
+        report["report_path"] = output.relative_to(_medical_workbench_dir(config)).as_posix()
+        return report
+
+    @router.post("/api/medical/gi/review/{card_id}")
+    def medical_gi_review_card(card_id: str, payload: dict[str, Any] | None = Body(default=None), authorization: str | None = Header(default=None)) -> dict[str, Any]:
+        authorize(authorization)
+        body = payload or {}
+        review_status = _normal_status(body.get("review_status") or "needs_review")
+        if review_status not in MEDICAL_MIGRAINE_REVIEW_STATUSES:
+            raise HTTPException(status_code=400, detail=f"unsupported medical review status: {review_status}")
+        report_path = _medical_report_path(config, str(body.get("report_path"))) if body.get("report_path") else _latest_medical_report(config, "gi")
+        if report_path is None:
+            sample = _stamp_medical_cards(_read_json_object(_medical_gi_sample_report_path()))
+            report_path = _medical_workbench_dir(config) / f"gi_report_{_medical_timestamp()}.json"
+            _write_medical_json(report_path, sample)
+        report = _stamp_medical_cards(_read_json_object(report_path))
+        reviewed = False
+        for card in report.get("cards") or []:
+            if isinstance(card, dict) and str(card.get("card_id")) == card_id:
+                card["review_status"] = review_status
+                card["reviewed_by"] = str(body.get("reviewed_by") or body.get("requested_by") or "dashboard")[:120]
+                card["reviewed_at"] = utc_now()
+                card["review_notes"] = str(body.get("review_notes") or "")[:2000]
+                reviewed = True
+                break
+        if not reviewed:
+            raise HTTPException(status_code=404, detail=f"medical hypothesis card not found: {card_id}")
+        report["workbench_kind"] = "gi"
         _write_medical_json(report_path, report)
         report["report_path"] = report_path.relative_to(_medical_workbench_dir(config)).as_posix()
         return {"ok": True, "card_id": card_id, "review_status": review_status, "report": report}
