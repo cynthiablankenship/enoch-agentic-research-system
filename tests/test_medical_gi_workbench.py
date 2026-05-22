@@ -36,6 +36,11 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
             "Bile acid diarrhea overlaps with diarrhea-predominant irritable bowel syndrome and chronic diarrhea mechanisms.",
         ),
         _record(
+            "1005",
+            "Colestipol intolerance in bile acid diarrhea",
+            "Colestipol and other bile acid sequestrants may be associated with gastrointestinal adverse effects, bloating, abdominal pain, and nonresponse.",
+        ),
+        _record(
             "1003",
             "Progesterone and gastrointestinal motility",
             "Progesterone and sex steroid literature discusses gastrointestinal motility, gastric emptying, and transit.",
@@ -52,7 +57,7 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
     assert report["schema_version"] == "medical_enoch_gi_workbench_v1"
     assert report["mode"] == "literature_only_research_prototype"
     assert report["runtime_effect"] == "none"
-    assert report["source_count"] == 4
+    assert report["source_count"] == 5
     assert report["card_count"] >= 4
     assert "medication, probiotic, or supplement changes" in report["safety_boundary"]["forbidden"]
 
@@ -60,6 +65,7 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
     assert {
         "post_antibiotic_microbiome",
         "bile_acid_diarrhea",
+        "colestipol_worsening_or_nonresponse",
         "progesterone_motility",
         "omega3_inflammation_tolerance",
     }.issubset(topics)
@@ -106,6 +112,22 @@ def test_progesterone_topic_requires_progesterone_specific_terms() -> None:
 
     assert "progesterone_motility" not in {card.topic for card in generic_cards}
     assert "progesterone_motility" in {card.topic for card in progesterone_cards}
+
+
+def test_ibs_card_is_a_decomposition_target_not_endpoint() -> None:
+    cards = generate_hypothesis_cards(
+        [
+            _record(
+                "2004",
+                "IBS-D and functional diarrhea mechanisms",
+                "IBS-D and functional diarrhea literature discusses chronic diarrhea, loose stool, bile acid signaling, motility, and microbiome composition.",
+            )
+        ]
+    )
+
+    ibs_card = next(card for card in cards if card.topic == "ibs_d_functional_diarrhea")
+    assert "provisional syndrome labels" in ibs_card.hypothesis
+    assert "narrower mechanisms" in ibs_card.hypothesis
 
 
 def test_card_safety_rejects_unsafe_next_test() -> None:

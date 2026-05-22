@@ -65,6 +65,21 @@ TOPIC_TERMS = {
         "tgr5",
         "cholestyramine",
     ),
+    "colestipol_worsening_or_nonresponse": (
+        "colestipol",
+        "bile acid sequestrant",
+        "bile acid sequestrants",
+        "bile acid binder",
+        "bile acid binders",
+        "cholestyramine",
+        "colesevelam",
+        "adverse",
+        "intolerance",
+        "nonresponse",
+        "non-response",
+        "bloating",
+        "abdominal pain",
+    ),
     "ibs_d_functional_diarrhea": (
         "ibs-d",
         "diarrhea-predominant",
@@ -227,10 +242,15 @@ def _topic_hypothesis(topic: str) -> tuple[str, str]:
             "Bile-acid diarrhea may be a high-value differential research branch for chronic watery or loose stools after microbiome disruption.",
             "Gut microbes help transform bile acids; altered bile-acid signaling can increase colonic secretion, motility, and urgency in IBS-D-like presentations.",
         )
+    if topic == "colestipol_worsening_or_nonresponse":
+        return (
+            "Worsening or nonresponse on colestipol should be modeled as a separate research signal, not as proof for or against bile-acid involvement.",
+            "Bile-acid sequestrants can cause GI adverse effects and may fail when symptoms are driven by mixed mechanisms, intolerance, incorrect subtype assumptions, or non-bile-acid causes.",
+        )
     if topic == "ibs_d_functional_diarrhea":
         return (
-            "IBS-D and functional diarrhea papers can help separate symptom-pattern hypotheses from infection, inflammation, celiac disease, and bile-acid mechanisms.",
-            "Visceral sensitivity, motility, microbiome composition, diet-response patterns, and stress physiology may overlap without one universal cause.",
+            "IBS-D and functional diarrhea should be treated as provisional syndrome labels that need decomposition into narrower mechanisms and exclusions.",
+            "Visceral sensitivity, motility, microbiome composition, bile-acid signaling, immune activity, diet-response patterns, and stress physiology may overlap without one universal cause.",
         )
     if topic == "infectious_or_inflammatory_screen":
         return (
@@ -278,7 +298,13 @@ def generate_hypothesis_cards(records: Iterable[LiteratureRecord]) -> list[GIHyp
         if len(topic_records) < 3:
             evidence_limits.append("Evidence set is small; treat this as a search direction, not a finding.")
         safe_next_tests = ["literature_review", "synthetic_data_simulation", "retrospective_deidentified_analysis"]
-        if topic in {"post_antibiotic_microbiome", "ibs_d_functional_diarrhea", "progesterone_motility", "omega3_inflammation_tolerance"}:
+        if topic in {
+            "post_antibiotic_microbiome",
+            "colestipol_worsening_or_nonresponse",
+            "ibs_d_functional_diarrhea",
+            "progesterone_motility",
+            "omega3_inflammation_tolerance",
+        }:
             safe_next_tests.append("clinician_supervised_observational_diary")
         card_id = f"gi-{topic}-{hashlib.blake2s(topic.encode('utf-8'), digest_size=3).hexdigest()}"
         card = GIHypothesisCard(

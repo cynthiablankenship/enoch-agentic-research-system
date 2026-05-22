@@ -1,5 +1,5 @@
 {
-  "card_count": 6,
+  "card_count": 7,
   "cards": [
     {
       "card_id": "gi-bile_acid_diarrhea-8fb646",
@@ -79,6 +79,84 @@
       "topic": "bile_acid_diarrhea"
     },
     {
+      "card_id": "gi-colestipol_worsening_or_nonresponse-1bee72",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "e Bowel Syndrome (IBS) is a chronic functional gastrointestinal disorder characterized by abdominal pain associated with defecation or a change in bowel habits. Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrie...",
+          "source_id": "33946961",
+          "title": "Diarrhea Predominant-Irritable Bowel Syndrome (IBS-D): Effects of Different Nutritional Patterns on Intestinal Dysbiosis and Symptoms.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/33946961/",
+          "year": "2021"
+        },
+        {
+          "excerpt": "n breath test are highly nonspecific. Female gender, older age, diarrhea-predominant IBS, bloating and flatulence, proton pump inhibitor and narcotic intake, and low hemoglobin are associated with SIBO among IBS patients. Several therapeutic trials targeting gut microbes using antibiotics and probiotics have further de...",
+          "source_id": "28274108",
+          "title": "Small Intestinal Bacterial Overgrowth and Irritable Bowel Syndrome: A Bridge between Functional Organic Dichotomy.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/28274108/",
+          "year": "2017"
+        },
+        {
+          "excerpt": "the fibroblast growth factor 19 (FGF19) for use in clinical practice is ongoing. Although bile acid sequestrants are the mainstay of treatment, the development of drugs that are more effective and have better compliance is required. Farnesoid X receptor (FXR) agonists are showing promising results.",
+          "source_id": "38659249",
+          "title": "[Bile Acid Diarrhea].",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38659249/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "tency, quality of life, abdominal pain severity and anxiety scores. Safety parameters and adverse events were also monitored. The change in IBS-SSS scores from baseline compared to placebo, reached significance in the ES1 and HT-ES1 group, on Days 28, 56 and 84. The decrease in mean IBS-SSS score from baseline to Day 8...",
+          "source_id": "38630015",
+          "title": "A randomized double-blind, placebo-controlled trial to evaluate the safety and efficacy of live Bifidobacterium longum CECT 7347 (ES1) and heat-treated Bifidobacterium longum CECT 7347 (HT-ES1) in participants with diarrhea-predominant irritable bowel syndrome.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38630015/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "es mucosal SERT, resulting in increased mucosal 5-HT. This may contribute to diarrhea and abdominal pain common in IBS.",
+          "source_id": "35167867",
+          "title": "Mucosal Serotonin Reuptake Transporter Expression in Irritable Bowel Syndrome Is Modulated by Gut Microbiota Via Mast Cell-Prostaglandin E2.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35167867/",
+          "year": "2022"
+        },
+        {
+          "excerpt": "irritable bowel syndrome (IBS-D), characterized primarily by the presence of diarrhea and abdominal pain, is a clinical manifestation resulting from a multitude of causative factors. Furthermore, Sishen Wan (SSW) has demonstrated efficacy in treating IBS-D. Nevertheless, its mechanism of action remains unclear. A model...",
+          "source_id": "38579640",
+          "title": "Sishen Wan enhances intestinal barrier function via regulating endoplasmic reticulum stress to improve mice with diarrheal irritable bowel syndrome.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38579640/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "om control, rather than reversal of the causative factors, which are still being defined. Bile acid sequestrants remain the main drugs used. They are relatively inexpensive, and better-quality data is now available for colesevelam. However, optimal use, including timing and formulation, needs clarification. The GLP-1 r...",
+          "source_id": "39264409",
+          "title": "Managing bile acid diarrhea: aspects of contention.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39264409/",
+          "year": "2024"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality for an individual.",
+        "Abstract-only records may omit methods, populations, effect sizes, negative findings, and clinical exclusions.",
+        "This prototype cannot distinguish medication effect, infection, bile-acid diarrhea, IBS-D, celiac disease, inflammatory bowel disease, or endocrine factors without clinician-reviewed data.",
+        "Human-subject, animal, medication, probiotic, supplement, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Worsening or nonresponse on colestipol should be modeled as a separate research signal, not as proof for or against bile-acid involvement.",
+      "mechanism": "Bile-acid sequestrants can cause GI adverse effects and may fail when symptoms are driven by mixed mechanisms, intolerance, incorrect subtype assumptions, or non-bile-acid causes.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication, probiotic, or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis",
+        "clinician_supervised_observational_diary"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, probiotic, supplement, animal, or human-subject experiment guidance.",
+      "topic": "colestipol_worsening_or_nonresponse"
+    },
+    {
       "card_id": "gi-ibs_d_functional_diarrhea-cde68e",
       "confidence": "low_medium",
       "evidence_for": [
@@ -139,8 +217,8 @@
         "Human-subject, animal, medication, probiotic, supplement, and treatment changes are outside this prototype."
       ],
       "human_review_required": true,
-      "hypothesis": "IBS-D and functional diarrhea papers can help separate symptom-pattern hypotheses from infection, inflammation, celiac disease, and bile-acid mechanisms.",
-      "mechanism": "Visceral sensitivity, motility, microbiome composition, diet-response patterns, and stress physiology may overlap without one universal cause.",
+      "hypothesis": "IBS-D and functional diarrhea should be treated as provisional syndrome labels that need decomposition into narrower mechanisms and exclusions.",
+      "mechanism": "Visceral sensitivity, motility, microbiome composition, bile-acid signaling, immune activity, diet-response patterns, and stress physiology may overlap without one universal cause.",
       "prohibited_uses": [
         "diagnosis",
         "treatment recommendation",
@@ -155,6 +233,83 @@
       ],
       "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, probiotic, supplement, animal, or human-subject experiment guidance.",
       "topic": "ibs_d_functional_diarrhea"
+    },
+    {
+      "card_id": "gi-infectious_or_inflammatory_screen-6832fd",
+      "confidence": "low_medium",
+      "evidence_for": [
+        {
+          "excerpt": "dies have shown BA dysmetabolism in dogs with chronic enteropathies (CE). Describe canine inflammatory bowel disease activity index (CIBDAI), dysbiosis index (DI) and fecal BA concentrations in healthy dogs and dogs with refractory or partially immunosuppressive-responsive CE or CE dogs requiring high doses of corticos...",
+          "source_id": "40833185",
+          "title": "Fecal and Clinical Profiles of Dogs With Chronic Enteropathies Treated With Bile Acid Sequestrants for 5-47 Months: A Retrospective Case Series.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40833185/",
+          "year": "2025"
+        },
+        {
+          "excerpt": "The gut microbiota has been implicated as a driver of irritable bowel syndrome (IBS) and inflammatory bowel disease (IBD). Recently we described, mucosal biofilms, signifying alterations in microbiota composition and bile acid (BA) metabolism in IBS and ulcerative colitis (UC). Luminal oxygen concentration is a key fac...",
+          "source_id": "38825783",
+          "title": "Archaea influence composition of endoscopically visible ileocolonic biofilms.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/38825783/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "in other diseases in remission including inflammatory bowel disease, microscopic colitis, celiac disease, and neuroendocrine tumors. In summary, advances in diagnosis of BAD provide opportunities for generalists and pediatric and adult gastroenterologists to provide targeted treatment for BAD presenting as chronic non-...",
+          "source_id": "34751982",
+          "title": "Bile Acid Diarrhea in Adults and Adolescents.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34751982/",
+          "year": "2022"
+        },
+        {
+          "excerpt": "er pylori infection gastrointestinal sequelae (especially in mammals) and does not affect inflammatory bowel disease-specific symptoms. However, for several gastrointestinal symptoms and diseases no studies have yet been performed addressing the impact of sex hormone steroids.",
+          "source_id": "35253565",
+          "title": "Impact of progesterone on the gastrointestinal tract: a comprehensive literature review.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35253565/",
+          "year": "2022"
+        },
+        {
+          "excerpt": "Inflammatory bowel diseases (IBD) are idiopathic disorders characterized by chronic gastrointestinal inflammation. Given conventional therapies' adverse effects and clinical failures, novel approaches are being investigated. Recent studies have highlighted the role of specialized pro-resolving lipid mediators (SPMs) in...",
+          "source_id": "39562789",
+          "title": "The resolvin D2 and omega-3 polyunsaturated fatty acid as a new possible therapeutic approach for inflammatory bowel diseases.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/39562789/",
+          "year": "2024"
+        },
+        {
+          "excerpt": "luation of full blood count, C-reactive protein, serology for coeliac disease, and faecal calprotectin, and consideration of diagnosing bile acid diarrhoea. Colonoscopy with random biopsies in both the right and left colon is recommended in patients older than 50 years and in presence of alarm features. Regarding treat...",
+          "source_id": "35695704",
+          "title": "Functional bowel disorders with diarrhoea: Clinical guidelines of the United European Gastroenterology and European Society for Neurogastroenterology and Motility.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35695704/",
+          "year": "2022"
+        },
+        {
+          "excerpt": "a heterogenous group of conditions that can cause distressing gastrointestinal symptoms. Celiac disease is most common and is triggered by exposure to gluten. Tissue transglutaminase immunoglobulin A is the diagnostic test of choice; management is gluten avoidance. Lactose intolerance is caused by absence or declining...",
+          "source_id": "35507311",
+          "title": "Gastrointestinal Conditions: Malabsorption Syndromes.",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/35507311/",
+          "year": "2022"
+        }
+      ],
+      "evidence_limits": [
+        "Literature clustering can show plausible connections but cannot prove causality for an individual.",
+        "Abstract-only records may omit methods, populations, effect sizes, negative findings, and clinical exclusions.",
+        "This prototype cannot distinguish medication effect, infection, bile-acid diarrhea, IBS-D, celiac disease, inflammatory bowel disease, or endocrine factors without clinician-reviewed data.",
+        "Human-subject, animal, medication, probiotic, supplement, and treatment changes are outside this prototype."
+      ],
+      "human_review_required": true,
+      "hypothesis": "Guideline-based chronic diarrhea workup terms should be preserved as exclusion and stratification variables in any research prototype.",
+      "mechanism": "Giardia, celiac disease, inflammatory markers, and C. difficile history can confound antibiotic-associated or IBS-D-like research signals.",
+      "prohibited_uses": [
+        "diagnosis",
+        "treatment recommendation",
+        "medication, probiotic, or supplement changes",
+        "human or animal experiments without formal review"
+      ],
+      "safe_next_tests": [
+        "literature_review",
+        "synthetic_data_simulation",
+        "retrospective_deidentified_analysis"
+      ],
+      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, probiotic, supplement, animal, or human-subject experiment guidance.",
+      "topic": "infectious_or_inflammatory_screen"
     },
     {
       "card_id": "gi-omega3_inflammation_tolerance-557b7b",
@@ -313,69 +468,6 @@
       "topic": "post_antibiotic_microbiome"
     },
     {
-      "card_id": "gi-infectious_or_inflammatory_screen-6832fd",
-      "confidence": "low_medium",
-      "evidence_for": [
-        {
-          "excerpt": "dies have shown BA dysmetabolism in dogs with chronic enteropathies (CE). Describe canine inflammatory bowel disease activity index (CIBDAI), dysbiosis index (DI) and fecal BA concentrations in healthy dogs and dogs with refractory or partially immunosuppressive-responsive CE or CE dogs requiring high doses of corticos...",
-          "source_id": "40833185",
-          "title": "Fecal and Clinical Profiles of Dogs With Chronic Enteropathies Treated With Bile Acid Sequestrants for 5-47 Months: A Retrospective Case Series.",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/40833185/",
-          "year": "2025"
-        },
-        {
-          "excerpt": "The gut microbiota has been implicated as a driver of irritable bowel syndrome (IBS) and inflammatory bowel disease (IBD). Recently we described, mucosal biofilms, signifying alterations in microbiota composition and bile acid (BA) metabolism in IBS and ulcerative colitis (UC). Luminal oxygen concentration is a key fac...",
-          "source_id": "38825783",
-          "title": "Archaea influence composition of endoscopically visible ileocolonic biofilms.",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/38825783/",
-          "year": "2024"
-        },
-        {
-          "excerpt": "in other diseases in remission including inflammatory bowel disease, microscopic colitis, celiac disease, and neuroendocrine tumors. In summary, advances in diagnosis of BAD provide opportunities for generalists and pediatric and adult gastroenterologists to provide targeted treatment for BAD presenting as chronic non-...",
-          "source_id": "34751982",
-          "title": "Bile Acid Diarrhea in Adults and Adolescents.",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/34751982/",
-          "year": "2022"
-        },
-        {
-          "excerpt": "er pylori infection gastrointestinal sequelae (especially in mammals) and does not affect inflammatory bowel disease-specific symptoms. However, for several gastrointestinal symptoms and diseases no studies have yet been performed addressing the impact of sex hormone steroids.",
-          "source_id": "35253565",
-          "title": "Impact of progesterone on the gastrointestinal tract: a comprehensive literature review.",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/35253565/",
-          "year": "2022"
-        },
-        {
-          "excerpt": "Inflammatory bowel diseases (IBD) are idiopathic disorders characterized by chronic gastrointestinal inflammation. Given conventional therapies' adverse effects and clinical failures, novel approaches are being investigated. Recent studies have highlighted the role of specialized pro-resolving lipid mediators (SPMs) in...",
-          "source_id": "39562789",
-          "title": "The resolvin D2 and omega-3 polyunsaturated fatty acid as a new possible therapeutic approach for inflammatory bowel diseases.",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/39562789/",
-          "year": "2024"
-        }
-      ],
-      "evidence_limits": [
-        "Literature clustering can show plausible connections but cannot prove causality for an individual.",
-        "Abstract-only records may omit methods, populations, effect sizes, negative findings, and clinical exclusions.",
-        "This prototype cannot distinguish medication effect, infection, bile-acid diarrhea, IBS-D, celiac disease, inflammatory bowel disease, or endocrine factors without clinician-reviewed data.",
-        "Human-subject, animal, medication, probiotic, supplement, and treatment changes are outside this prototype."
-      ],
-      "human_review_required": true,
-      "hypothesis": "Guideline-based chronic diarrhea workup terms should be preserved as exclusion and stratification variables in any research prototype.",
-      "mechanism": "Giardia, celiac disease, inflammatory markers, and C. difficile history can confound antibiotic-associated or IBS-D-like research signals.",
-      "prohibited_uses": [
-        "diagnosis",
-        "treatment recommendation",
-        "medication, probiotic, or supplement changes",
-        "human or animal experiments without formal review"
-      ],
-      "safe_next_tests": [
-        "literature_review",
-        "synthetic_data_simulation",
-        "retrospective_deidentified_analysis"
-      ],
-      "safety_label": "Literature-only research hypothesis. Not medical advice. No diagnosis, treatment, medication, probiotic, supplement, animal, or human-subject experiment guidance.",
-      "topic": "infectious_or_inflammatory_screen"
-    },
-    {
       "card_id": "gi-progesterone_motility-b5b412",
       "confidence": "low_medium",
       "evidence_for": [
@@ -433,7 +525,7 @@
       "topic": "progesterone_motility"
     }
   ],
-  "generated_at": "2026-05-22T13:46:28.860307+00:00",
+  "generated_at": "2026-05-22T13:51:55.774157+00:00",
   "mode": "literature_only_research_prototype",
   "runtime_effect": "none",
   "safety_boundary": {
@@ -453,6 +545,6 @@
     ]
   },
   "schema_version": "medical_enoch_gi_workbench_v1",
-  "source_count": 74,
+  "source_count": 98,
   "topic": "chronic loose stools after prolonged antibiotic exposure"
 }
