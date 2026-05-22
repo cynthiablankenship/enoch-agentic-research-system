@@ -177,3 +177,19 @@ def test_script_shape_is_json_serializable() -> None:
 
     encoded = json.dumps(report)
     assert "medical_enoch_gi_workbench_v1" in encoded
+
+
+def test_gi_evidence_excerpts_start_at_sentence_boundary() -> None:
+    report = build_workbench(
+        [
+            _record(
+                "4001",
+                "Bile acid diarrhea mechanism",
+                "Bile acids normally undergo enterohepatic circulation. When this circulation is interrupted, bile acids enter the colon and may contribute to diarrhea.",
+            )
+        ]
+    )
+
+    excerpt = report["cards"][0]["evidence_for"][0]["excerpt"]
+    assert excerpt.startswith("Bile acids")
+    assert not excerpt.startswith("ile acids")

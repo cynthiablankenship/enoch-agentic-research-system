@@ -121,3 +121,19 @@ def test_script_shape_is_json_serializable() -> None:
 
     encoded = json.dumps(report)
     assert "medical_enoch_migraine_workbench_v1" in encoded
+
+
+def test_evidence_excerpts_start_at_sentence_boundary() -> None:
+    report = build_workbench(
+        [
+            _record(
+                "4001",
+                "Hormones and migraine",
+                "The menstrual cycle and pregnancy may modify migraine disease. Hormonal timing and estrogen fluctuation are discussed in observational cohorts.",
+            )
+        ]
+    )
+
+    excerpt = report["cards"][0]["evidence_for"][0]["excerpt"]
+    assert excerpt.startswith("The menstrual cycle")
+    assert not excerpt.startswith("he menstrual")

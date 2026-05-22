@@ -212,15 +212,20 @@ def _trigger_hits(record: LiteratureRecord) -> set[str]:
 
 def _evidence_excerpt(record: LiteratureRecord, topic: str) -> str:
     text = " ".join(record.abstract.split())
-    lowered = text.lower()
-    start = 0
-    for term in TOPIC_TERMS[topic]:
-        found = lowered.find(term)
-        if found >= 0:
-            start = max(0, found - 90)
+    sentences = re.split(r"(?<=[.!?])\s+", text)
+    lowered_sentences = [sentence.lower() for sentence in sentences]
+    selected = 0
+    for index, sentence in enumerate(lowered_sentences):
+        if any(term in sentence for term in TOPIC_TERMS[topic]):
+            selected = index
             break
-    excerpt = text[start : start + 320].strip()
-    return excerpt + ("..." if len(text) > start + 320 else "")
+    excerpt = " ".join(sentence.strip() for sentence in sentences[selected : selected + 2] if sentence.strip())
+    if not excerpt:
+        excerpt = text
+    if len(excerpt) > 380:
+        excerpt = excerpt[:380].rsplit(" ", 1)[0].rstrip(" ,;:")
+        return excerpt + "..."
+    return excerpt
 
 
 def _confidence(source_count: int, limit_count: int) -> str:

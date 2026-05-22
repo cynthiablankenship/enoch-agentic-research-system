@@ -6,14 +6,14 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "our study was to investigate specific types of microbiota-derived metabolites, especially bile acids, short-chain fatty acids, vitamins, amino acids, serotonin and hypoxanthine, which are all implicated in the pathogenesis of IBS. Metabolites-focused research has identified multiple microbial targets relevant to IBS pa...",
+          "excerpt": "The aim of our study was to investigate specific types of microbiota-derived metabolites, especially bile acids, short-chain fatty acids, vitamins, amino acids, serotonin and hypoxanthine, which are all implicated in the pathogenesis of IBS. Metabolites-focused research has identified multiple microbial targets relevant to IBS patients, important roles of microbiota-derived...",
           "source_id": "34631603",
           "title": "Gut Microbiota-Derived Metabolites in Irritable Bowel Syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34631603/",
           "year": "2021"
         },
         {
-          "excerpt": "a is a very common gastrointestinal symptom, and the presence of higher concentrations of bile acid in the colon leads to bile acid diarrhea (BAD). In BAD patients, a portion of bile from the small intestine that is normally controlled by enterohepatic circulation is present at a high concentration in the lumen of the...",
+          "excerpt": "Diarrhea is a very common gastrointestinal symptom, and the presence of higher concentrations of bile acid in the colon leads to bile acid diarrhea (BAD). In BAD patients, a portion of bile from the small intestine that is normally controlled by enterohepatic circulation is present at a high concentration in the lumen of the large intestine, resulting in increased motility and...",
           "source_id": "38659249",
           "title": "[Bile Acid Diarrhea].",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38659249/",
@@ -27,28 +27,28 @@
           "year": "2021"
         },
         {
-          "excerpt": "Bile acids normally undergo enterohepatic circulation. When this circulation is interrupted, bile acids enter the colon in increased concentrations. Here, they produce Cl- secretion by a calcium- and cyclic AMP-dependent mechanism, resulting in diarrhea. Cholestasis may lead to serum bile acid concentrations high enoug...",
+          "excerpt": "Bile acids normally undergo enterohepatic circulation. When this circulation is interrupted, bile acids enter the colon in increased concentrations.",
           "source_id": "9571377",
           "title": "Bile acid diarrhea.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/9571377/",
           "year": "1998"
         },
         {
-          "excerpt": "Imbalanced gut microbiota (GM) and abnormal fecal bile acid (BA) are thought to be the key factors for diarrhea-predominant irritable bowel syndrome (IBS-D), but the underlying mechanism remains unclear. Herein, we explore the influence of the GM-BA-Takeda G-protein-coupled receptor 5 (TGR5) axis on IBS-D. Twenty-five...",
+          "excerpt": "Imbalanced gut microbiota (GM) and abnormal fecal bile acid (BA) are thought to be the key factors for diarrhea-predominant irritable bowel syndrome (IBS-D), but the underlying mechanism remains unclear. Herein, we explore the influence of the GM-BA-Takeda G-protein-coupled receptor 5 (TGR5) axis on IBS-D.",
           "source_id": "38329942",
           "title": "The function of the gut microbiota-bile acid-TGR5 axis in diarrhea-predominant irritable bowel syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38329942/",
           "year": "2024"
         },
         {
-          "excerpt": "S (IBS-D) demonstrated shifts in the metatranscriptome and metabolome including increased bile acids, polyamines, succinate pathway intermediates (malate, fumarate), and transcripts involved in fructose, mannose, and polyol metabolism compared to constipation-predominant IBS (IBS-C). A classifier incorporating metaboli...",
+          "excerpt": "Diarrhea-predominant IBS (IBS-D) demonstrated shifts in the metatranscriptome and metabolome including increased bile acids, polyamines, succinate pathway intermediates (malate, fumarate), and transcripts involved in fructose, mannose, and polyol metabolism compared to constipation-predominant IBS (IBS-C). A classifier incorporating metabolites and gene-normalized transcripts...",
           "source_id": "36624530",
           "title": "Multi-omics profiles of the intestinal microbiome in irritable bowel syndrome and its bowel habit subtypes.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/36624530/",
           "year": "2023"
         },
         {
-          "excerpt": "ophan-kynurenine pathways. Additionally, chenodeoxycholic acid, a diarrhea-linked primary bile acid, decreased substantially. In conclusion, postbiotics have shown promise in relieving chronic diarrhea.",
+          "excerpt": "Additionally, chenodeoxycholic acid, a diarrhea-linked primary bile acid, decreased substantially. In conclusion, postbiotics have shown promise in relieving chronic diarrhea.",
           "source_id": "39189588",
           "title": "Effects of postbiotics on chronic diarrhea in young adults: a randomized, double-blind, placebo-controlled crossover trial assessing clinical symptoms, gut microbiota, and metabolite profiles.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39189588/",
@@ -83,49 +83,49 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "e Bowel Syndrome (IBS) is a chronic functional gastrointestinal disorder characterized by abdominal pain associated with defecation or a change in bowel habits. Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrie...",
+          "excerpt": "Irritable Bowel Syndrome (IBS) is a chronic functional gastrointestinal disorder characterized by abdominal pain associated with defecation or a change in bowel habits. Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrients from the diet and protecting the host from...",
           "source_id": "33946961",
           "title": "Diarrhea Predominant-Irritable Bowel Syndrome (IBS-D): Effects of Different Nutritional Patterns on Intestinal Dysbiosis and Symptoms.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33946961/",
           "year": "2021"
         },
         {
-          "excerpt": "n breath test are highly nonspecific. Female gender, older age, diarrhea-predominant IBS, bloating and flatulence, proton pump inhibitor and narcotic intake, and low hemoglobin are associated with SIBO among IBS patients. Several therapeutic trials targeting gut microbes using antibiotics and probiotics have further de...",
+          "excerpt": "Female gender, older age, diarrhea-predominant IBS, bloating and flatulence, proton pump inhibitor and narcotic intake, and low hemoglobin are associated with SIBO among IBS patients. Several therapeutic trials targeting gut microbes using antibiotics and probiotics have further demonstrated that not all symptoms in patients with IBS originate in the brain but rather in the...",
           "source_id": "28274108",
           "title": "Small Intestinal Bacterial Overgrowth and Irritable Bowel Syndrome: A Bridge between Functional Organic Dichotomy.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/28274108/",
           "year": "2017"
         },
         {
-          "excerpt": "the fibroblast growth factor 19 (FGF19) for use in clinical practice is ongoing. Although bile acid sequestrants are the mainstay of treatment, the development of drugs that are more effective and have better compliance is required. Farnesoid X receptor (FXR) agonists are showing promising results.",
+          "excerpt": "The clinical symptoms of BAD include chronic diarrhea, increased frequency of defecation, urgency to defecate, fecal incontinence, and cramping abdominal pain. The pathophysiology of BAD has not yet been fully elucidated.",
           "source_id": "38659249",
           "title": "[Bile Acid Diarrhea].",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38659249/",
           "year": "2024"
         },
         {
-          "excerpt": "tency, quality of life, abdominal pain severity and anxiety scores. Safety parameters and adverse events were also monitored. The change in IBS-SSS scores from baseline compared to placebo, reached significance in the ES1 and HT-ES1 group, on Days 28, 56 and 84. The decrease in mean IBS-SSS score from baseline to Day 8...",
+          "excerpt": "Secondary outcome measures were stool consistency, quality of life, abdominal pain severity and anxiety scores. Safety parameters and adverse events were also monitored.",
           "source_id": "38630015",
           "title": "A randomized double-blind, placebo-controlled trial to evaluate the safety and efficacy of live Bifidobacterium longum CECT 7347 (ES1) and heat-treated Bifidobacterium longum CECT 7347 (HT-ES1) in participants with diarrhea-predominant irritable bowel syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38630015/",
           "year": "2024"
         },
         {
-          "excerpt": "es mucosal SERT, resulting in increased mucosal 5-HT. This may contribute to diarrhea and abdominal pain common in IBS.",
+          "excerpt": "This may contribute to diarrhea and abdominal pain common in IBS.",
           "source_id": "35167867",
           "title": "Mucosal Serotonin Reuptake Transporter Expression in Irritable Bowel Syndrome Is Modulated by Gut Microbiota Via Mast Cell-Prostaglandin E2.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/35167867/",
           "year": "2022"
         },
         {
-          "excerpt": "irritable bowel syndrome (IBS-D), characterized primarily by the presence of diarrhea and abdominal pain, is a clinical manifestation resulting from a multitude of causative factors. Furthermore, Sishen Wan (SSW) has demonstrated efficacy in treating IBS-D. Nevertheless, its mechanism of action remains unclear. A model...",
+          "excerpt": "Diarrheal irritable bowel syndrome (IBS-D), characterized primarily by the presence of diarrhea and abdominal pain, is a clinical manifestation resulting from a multitude of causative factors. Furthermore, Sishen Wan (SSW) has demonstrated efficacy in treating IBS-D.",
           "source_id": "38579640",
           "title": "Sishen Wan enhances intestinal barrier function via regulating endoplasmic reticulum stress to improve mice with diarrheal irritable bowel syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38579640/",
           "year": "2024"
         },
         {
-          "excerpt": "om control, rather than reversal of the causative factors, which are still being defined. Bile acid sequestrants remain the main drugs used. They are relatively inexpensive, and better-quality data is now available for colesevelam. However, optimal use, including timing and formulation, needs clarification. The GLP-1 r...",
+          "excerpt": "Bile acid sequestrants remain the main drugs used. They are relatively inexpensive, and better-quality data is now available for colesevelam.",
           "source_id": "39264409",
           "title": "Managing bile acid diarrhea: aspects of contention.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39264409/",
@@ -161,49 +161,49 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "tocols (e.g., traditional nutritional advice, low-FODMAP diet, gluten-free diet, etc.) on IBS-D symptoms and on intestinal microbiota variations in both IBS-D patients and healthy subjects. To date, an ideal nutritional protocol does not exist for IBS-D patients but it seems crucial to consider the effect of the differ...",
+          "excerpt": "Irritable Bowel Syndrome (IBS) is a chronic functional gastrointestinal disorder characterized by abdominal pain associated with defecation or a change in bowel habits. Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrients from the diet and protecting the host from...",
           "source_id": "33946961",
           "title": "Diarrhea Predominant-Irritable Bowel Syndrome (IBS-D): Effects of Different Nutritional Patterns on Intestinal Dysbiosis and Symptoms.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33946961/",
           "year": "2021"
         },
         {
-          "excerpt": "es on the different subtypes of IBS (constipation-predominant IBS-C, diarrhea-predominant IBS-D) and present controversial views regarding the role of microbiota in IBS.",
+          "excerpt": "Irritable bowel syndrome (IBS) is the most common functional bowel disorder worldwide and is associated with visceral hypersensitivity, gut motility, immunomodulation, gut microbiota alterations, and dysfunction of the brain-gut axis; however, its pathophysiology remains poorly understood. Gut microbiota and its metabolites are proposed as possible etiological factors of IBS.",
           "source_id": "34631603",
           "title": "Gut Microbiota-Derived Metabolites in Irritable Bowel Syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34631603/",
           "year": "2021"
         },
         {
-          "excerpt": "Diarrhea is defined as the passage of loose stools and increase in stool frequency, weight, or volume. Diarrhea is an important health issue since it accounts for 2.5 million deaths in the world each year. Diarrhea can be acute, persistent, or chronic. Acute diarrhea (AD) is usually infectious, caused by viruses, less...",
+          "excerpt": "Diarrhea is defined as the passage of loose stools and increase in stool frequency, weight, or volume. Diarrhea is an important health issue since it accounts for 2.5 million deaths in the world each year.",
           "source_id": "33971655",
           "title": "Diarrhea as a Clinical Challenge: General Practitioner Approach.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33971655/",
           "year": "2022"
         },
         {
-          "excerpt": "a in the lactulose hydrogen breath test are highly nonspecific. Female gender, older age, diarrhea-predominant IBS, bloating and flatulence, proton pump inhibitor and narcotic intake, and low hemoglobin are associated with SIBO among IBS patients. Several therapeutic trials targeting gut microbes using antibiotics and...",
+          "excerpt": "The pathogenesis of irritable bowel syndrome (IBS), once thought to be largely psychogenic in origin, is now understood to be multifactorial. One of the reasons for this paradigm shift is the realization that gut dysbiosis, including small intestinal bacterial overgrowth (SIBO), causes IBS symptoms.",
           "source_id": "28274108",
           "title": "Small Intestinal Bacterial Overgrowth and Irritable Bowel Syndrome: A Bridge between Functional Organic Dichotomy.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/28274108/",
           "year": "2017"
         },
         {
-          "excerpt": "nation and spleen yang deficiency. In TCM, diarrhea-predominant irritable bowel syndrome (IBS-D) is often diagnosed as liver depression and spleen deficiency, and the use of WTGPD has shown significant therapeutic effect. However, the underlying mechanism of WTGPD treating IBS-D remains unclear. To explore the effect a...",
+          "excerpt": "In TCM, diarrhea-predominant irritable bowel syndrome (IBS-D) is often diagnosed as liver depression and spleen deficiency, and the use of WTGPD has shown significant therapeutic effect. However, the underlying mechanism of WTGPD treating IBS-D remains unclear.",
           "source_id": "39013542",
           "title": "WenTongGanPi decoction alleviates diarrhea-predominant irritable bowel syndrome by improving intestinal barrier.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39013542/",
           "year": "2024"
         },
         {
-          "excerpt": "ated to be 1-2% of the general population, and it comprises one-third of the instances of diarrhea-predominant irritable bowel syndrome. The clinical symptoms of BAD include chronic diarrhea, increased frequency of defecation, urgency to defecate, fecal incontinence, and cramping abdominal pain. The pathophysiology of...",
+          "excerpt": "The prevalence of BAD is estimated to be 1-2% of the general population, and it comprises one-third of the instances of diarrhea-predominant irritable bowel syndrome. The clinical symptoms of BAD include chronic diarrhea, increased frequency of defecation, urgency to defecate, fecal incontinence, and cramping abdominal pain.",
           "source_id": "38659249",
           "title": "[Bile Acid Diarrhea].",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38659249/",
           "year": "2024"
         },
         {
-          "excerpt": "improving symptom severity in adults with diarrhea-predominant irritable bowel syndrome (IBS-D), a randomised, double-blind, placebo-controlled trial with 200 participants split into three groups was carried out. Two capsules of either ES1, HT-ES1 or placebo were administered orally, once daily, for 84 days (12 weeks)...",
+          "excerpt": "To determine the efficacy of the probiotic Bifidobacterium longum CECT 7347 (ES1) and postbiotic heat-treated Bifidobacterium longum CECT 7347 (HT-ES1) in improving symptom severity in adults with diarrhea-predominant irritable bowel syndrome (IBS-D), a randomised, double-blind, placebo-controlled trial with 200 participants split into three groups was carried out. Two...",
           "source_id": "38630015",
           "title": "A randomized double-blind, placebo-controlled trial to evaluate the safety and efficacy of live Bifidobacterium longum CECT 7347 (ES1) and heat-treated Bifidobacterium longum CECT 7347 (HT-ES1) in participants with diarrhea-predominant irritable bowel syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38630015/",
@@ -239,49 +239,49 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "dies have shown BA dysmetabolism in dogs with chronic enteropathies (CE). Describe canine inflammatory bowel disease activity index (CIBDAI), dysbiosis index (DI) and fecal BA concentrations in healthy dogs and dogs with refractory or partially immunosuppressive-responsive CE or CE dogs requiring high doses of corticos...",
+          "excerpt": "Describe canine inflammatory bowel disease activity index (CIBDAI), dysbiosis index (DI) and fecal BA concentrations in healthy dogs and dogs with refractory or partially immunosuppressive-responsive CE or CE dogs requiring high doses of corticosteroids, treated with BA sequestrants (BAS). Twenty-four CE dogs and 18 healthy dogs.",
           "source_id": "40833185",
           "title": "Fecal and Clinical Profiles of Dogs With Chronic Enteropathies Treated With Bile Acid Sequestrants for 5-47 Months: A Retrospective Case Series.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/40833185/",
           "year": "2025"
         },
         {
-          "excerpt": "The gut microbiota has been implicated as a driver of irritable bowel syndrome (IBS) and inflammatory bowel disease (IBD). Recently we described, mucosal biofilms, signifying alterations in microbiota composition and bile acid (BA) metabolism in IBS and ulcerative colitis (UC). Luminal oxygen concentration is a key fac...",
+          "excerpt": "The gut microbiota has been implicated as a driver of irritable bowel syndrome (IBS) and inflammatory bowel disease (IBD). Recently we described, mucosal biofilms, signifying alterations in microbiota composition and bile acid (BA) metabolism in IBS and ulcerative colitis (UC).",
           "source_id": "38825783",
           "title": "Archaea influence composition of endoscopically visible ileocolonic biofilms.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38825783/",
           "year": "2024"
         },
         {
-          "excerpt": "in other diseases in remission including inflammatory bowel disease, microscopic colitis, celiac disease, and neuroendocrine tumors. In summary, advances in diagnosis of BAD provide opportunities for generalists and pediatric and adult gastroenterologists to provide targeted treatment for BAD presenting as chronic non-...",
+          "excerpt": "BAD has also been identified as a co-factor contributing to persistent diarrhea in other diseases in remission including inflammatory bowel disease, microscopic colitis, celiac disease, and neuroendocrine tumors. In summary, advances in diagnosis of BAD provide opportunities for generalists and pediatric and adult gastroenterologists to provide targeted treatment for BAD...",
           "source_id": "34751982",
           "title": "Bile Acid Diarrhea in Adults and Adolescents.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34751982/",
           "year": "2022"
         },
         {
-          "excerpt": "er pylori infection gastrointestinal sequelae (especially in mammals) and does not affect inflammatory bowel disease-specific symptoms. However, for several gastrointestinal symptoms and diseases no studies have yet been performed addressing the impact of sex hormone steroids.",
+          "excerpt": "Based on these we conclude that progesterone has a dose-dependent and sex-dependent effect on gastric emptying (especially in mammals), slows down gastrointestinal motility, reduces the gallbladder's response to contractile stimulants, may support gastroesophageal reflux by reducing the esophageal sphincter pressure, may protect from Helicobacter pylori infection...",
           "source_id": "35253565",
           "title": "Impact of progesterone on the gastrointestinal tract: a comprehensive literature review.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/35253565/",
           "year": "2022"
         },
         {
-          "excerpt": "Inflammatory bowel diseases (IBD) are idiopathic disorders characterized by chronic gastrointestinal inflammation. Given conventional therapies' adverse effects and clinical failures, novel approaches are being investigated. Recent studies have highlighted the role of specialized pro-resolving lipid mediators (SPMs) in...",
+          "excerpt": "Inflammatory bowel diseases (IBD) are idiopathic disorders characterized by chronic gastrointestinal inflammation. Given conventional therapies' adverse effects and clinical failures, novel approaches are being investigated.",
           "source_id": "39562789",
           "title": "The resolvin D2 and omega-3 polyunsaturated fatty acid as a new possible therapeutic approach for inflammatory bowel diseases.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39562789/",
           "year": "2024"
         },
         {
-          "excerpt": "luation of full blood count, C-reactive protein, serology for coeliac disease, and faecal calprotectin, and consideration of diagnosing bile acid diarrhoea. Colonoscopy with random biopsies in both the right and left colon is recommended in patients older than 50 years and in presence of alarm features. Regarding treat...",
+          "excerpt": "In terms of diagnosis, the consensus supports a symptom-based approach also with the exclusion of alarm symptoms, recommending the evaluation of full blood count, C-reactive protein, serology for coeliac disease, and faecal calprotectin, and consideration of diagnosing bile acid diarrhoea. Colonoscopy with random biopsies in both the right and left colon is recommended in...",
           "source_id": "35695704",
           "title": "Functional bowel disorders with diarrhoea: Clinical guidelines of the United European Gastroenterology and European Society for Neurogastroenterology and Motility.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/35695704/",
           "year": "2022"
         },
         {
-          "excerpt": "a heterogenous group of conditions that can cause distressing gastrointestinal symptoms. Celiac disease is most common and is triggered by exposure to gluten. Tissue transglutaminase immunoglobulin A is the diagnostic test of choice; management is gluten avoidance. Lactose intolerance is caused by absence or declining...",
+          "excerpt": "Celiac disease is most common and is triggered by exposure to gluten. Tissue transglutaminase immunoglobulin A is the diagnostic test of choice; management is gluten avoidance.",
           "source_id": "35507311",
           "title": "Gastrointestinal Conditions: Malabsorption Syndromes.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/35507311/",
@@ -316,49 +316,49 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "It remains uncertain whether the omega-3 fatty acids eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) reduce cardiovascular risk. To determine the effects on cardiovascular outcomes of a carboxylic acid formulation of EPA and DHA (omega-3 CA) with documented favorable effects on lipid and inflammatory markers...",
+          "excerpt": "It remains uncertain whether the omega-3 fatty acids eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) reduce cardiovascular risk. To determine the effects on cardiovascular outcomes of a carboxylic acid formulation of EPA and DHA (omega-3 CA) with documented favorable effects on lipid and inflammatory markers in patients with atherogenic dyslipidemia and high...",
           "source_id": "33190147",
           "title": "Effect of High-Dose Omega-3 Fatty Acids vs Corn Oil on Major Adverse Cardiovascular Events in Patients at High Cardiovascular Risk: The STRENGTH Randomized Clinical Trial.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33190147/",
           "year": "2020"
         },
         {
-          "excerpt": "n based on a critical examination of the literature surrounding the effects of long-chain omega-3 polyunsaturated fatty acid (\u03c9-3 PUFA) supplementation on exercise performance, recovery, and brain health. This position stand is intended to provide a scientific foundation for athletes, dietitians, trainers, and other pr...",
+          "excerpt": "Position Statement: The International Society of Sports Nutrition (ISSN) presents this position based on a critical examination of the literature surrounding the effects of long-chain omega-3 polyunsaturated fatty acid (\u03c9-3 PUFA) supplementation on exercise performance, recovery, and brain health. This position stand is intended to provide a scientific foundation for athletes...",
           "source_id": "39810703",
           "title": "International Society of Sports Nutrition Position Stand: Long-Chain Omega-3 Polyunsaturated Fatty Acids.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39810703/",
           "year": "2025"
         },
         {
-          "excerpt": "iew summarises findings from studies in companion animals with chronic diseases receiving omega-3 supplementation. Investigated conditions included dermatopathies (dogs n = 7), osteoarthritis (dogs n = 7, cats n = 2), cardiovascular diseases (dogs n = 7), dyslipidaemias (dogs n = 1), gastroenteropathies (dogs n = 2), c...",
+          "excerpt": "This review summarises findings from studies in companion animals with chronic diseases receiving omega-3 supplementation. Investigated conditions included dermatopathies (dogs n = 7), osteoarthritis (dogs n = 7, cats n = 2), cardiovascular diseases (dogs n = 7), dyslipidaemias (dogs n = 1), gastroenteropathies (dogs n = 2), chronic kidney disease (dogs n = 2, cats n = 3)...",
           "source_id": "40495687",
           "title": "Exploring the efficacy and optimal dosages of omega-3 supplementation for companion animals.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/40495687/",
           "year": "2025"
         },
         {
-          "excerpt": "Omega-3 polyunsaturated fatty acids (omega-3 PUFAs), which are essential fatty acids that humans should obtain from diet, have potential benefits for human health. In addition to altering the structure and function of cell membranes, omega-3 PUFAs (docosahexaenoic acid (DHA), eicosapentaenoic acid (EPA), alpha-linoleni...",
+          "excerpt": "Omega-3 polyunsaturated fatty acids (omega-3 PUFAs), which are essential fatty acids that humans should obtain from diet, have potential benefits for human health. In addition to altering the structure and function of cell membranes, omega-3 PUFAs (docosahexaenoic acid (DHA), eicosapentaenoic acid (EPA), alpha-linolenic acid (ALA), and docosapentaenoic acid (DPA)) exert...",
           "source_id": "33488295",
           "title": "Associations among Dietary Omega-3 Polyunsaturated Fatty Acids, the Gut Microbiota, and Intestinal Immunity.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33488295/",
           "year": "2021"
         },
         {
-          "excerpt": "Fish oil (FO), a mixture of omega-3 fatty acids mainly comprising docosahexaenoic acid (DHA) and eicosapentaenoic acid (EPA), has been recommended for patients with type 2 diabetes (T2D) and hypertriglyceridemia. However, its effects on lipidomic profiles and gut microbiota and the factors influencing triglyceride (TG)...",
+          "excerpt": "Fish oil (FO), a mixture of omega-3 fatty acids mainly comprising docosahexaenoic acid (DHA) and eicosapentaenoic acid (EPA), has been recommended for patients with type 2 diabetes (T2D) and hypertriglyceridemia. However, its effects on lipidomic profiles and gut microbiota and the factors influencing triglyceride (TG) reduction remain unclear.",
           "source_id": "39163858",
           "title": "Impact of omega-3 fatty acids on hypertriglyceridemia, lipidomics, and gut microbiome in patients with type 2 diabetes.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39163858/",
           "year": "2025"
         },
         {
-          "excerpt": "Alzheimer's disease (AD) is the most common cause of dementia worldwide. Omega-3 fatty acids (n-3-PUFA) are essential to normal neural development and function. Souvenaid\u00ae, a medical supplement that contains n-3-PUFA's: eicosatetraenoic acid (EPA) and docosahexaenoic acid (DHA), has emerged as an alternative, slowing c...",
+          "excerpt": "Omega-3 fatty acids (n-3-PUFA) are essential to normal neural development and function. Souvenaid\u00ae, a medical supplement that contains n-3-PUFA's: eicosatetraenoic acid (EPA) and docosahexaenoic acid (DHA), has emerged as an alternative, slowing cognitive decline in AD patients.",
           "source_id": "38924283",
           "title": "The effects of omega-3, DHA, EPA, Souvenaid\u00ae in Alzheimer's disease: A systematic review and meta-analysis.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38924283/",
           "year": "2024"
         },
         {
-          "excerpt": "Omega-3 polyunsaturated fatty acids (PUFAs) have anticolorectal cancer (CRC) activity. The intestinal microbiota has been implicated in colorectal carcinogenesis. Dietary omega-3 PUFAs alter the mouse intestinal microbiome compatible with antineoplastic activity. Therefore, we investigated the effect of omega-3 PUFA su...",
+          "excerpt": "Omega-3 polyunsaturated fatty acids (PUFAs) have anticolorectal cancer (CRC) activity. The intestinal microbiota has been implicated in colorectal carcinogenesis.",
           "source_id": "28951525",
           "title": "A randomised trial of the effect of omega-3 polyunsaturated fatty acid supplements on the human intestinal microbiota.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/28951525/",
@@ -394,49 +394,49 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "aracterized by abdominal pain associated with defecation or a change in bowel habits. Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrients from the diet and protecting the host from pathogens; specific alterati...",
+          "excerpt": "Gut microbiota, which acts as a real organ with well-defined functions, is in a mutualistic relationship with the host, harvesting additional energy and nutrients from the diet and protecting the host from pathogens; specific alterations in its composition seem to play a crucial role in IBS pathophysiology. It is well known that diet can significantly modulate the intestinal...",
           "source_id": "33946961",
           "title": "Diarrhea Predominant-Irritable Bowel Syndrome (IBS-D): Effects of Different Nutritional Patterns on Intestinal Dysbiosis and Symptoms.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33946961/",
           "year": "2021"
         },
         {
-          "excerpt": "ide and is associated with visceral hypersensitivity, gut motility, immunomodulation, gut microbiota alterations, and dysfunction of the brain-gut axis; however, its pathophysiology remains poorly understood. Gut microbiota and its metabolites are proposed as possible etiological factors of IBS. The aim of our study wa...",
+          "excerpt": "Irritable bowel syndrome (IBS) is the most common functional bowel disorder worldwide and is associated with visceral hypersensitivity, gut motility, immunomodulation, gut microbiota alterations, and dysfunction of the brain-gut axis; however, its pathophysiology remains poorly understood. Gut microbiota and its metabolites are proposed as possible etiological factors of IBS.",
           "source_id": "34631603",
           "title": "Gut Microbiota-Derived Metabolites in Irritable Bowel Syndrome.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34631603/",
           "year": "2021"
         },
         {
-          "excerpt": "e specialists. Therapy in AD consists of early oral refeeding, antidiarrheal medications, antibiotics, and probiotics. Chronic diarrhea (CD) has diverse etiology. The majority of patients have self-limiting symptoms or functional gastrointestinal disorders. Patients with blood in stool, weight loss, clinical and labora...",
+          "excerpt": "Therapy in AD consists of early oral refeeding, antidiarrheal medications, antibiotics, and probiotics. Chronic diarrhea (CD) has diverse etiology.",
           "source_id": "33971655",
           "title": "Diarrhea as a Clinical Challenge: General Practitioner Approach.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33971655/",
           "year": "2022"
         },
         {
-          "excerpt": "ted with SIBO among IBS patients. Several therapeutic trials targeting gut microbes using antibiotics and probiotics have further demonstrated that not all symptoms in patients with IBS originate in the brain but rather in the gut, providing support for the micro-organic basis of IBS. A recent proof-of-concept study sh...",
+          "excerpt": "One of the reasons for this paradigm shift is the realization that gut dysbiosis, including small intestinal bacterial overgrowth (SIBO), causes IBS symptoms. Between 4% and 78% of patients with IBS and 1% and 40% of controls have SIBO; such wide variations in prevalence might result from population differences, IBS diagnostic criteria, and, most importantly, methods to...",
           "source_id": "28274108",
           "title": "Small Intestinal Bacterial Overgrowth and Irritable Bowel Syndrome: A Bridge between Functional Organic Dichotomy.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/28274108/",
           "year": "2017"
         },
         {
-          "excerpt": "prove intestinal barrier likely via inhibiting MAPK signal pathway and improving micobial dysbiosis.",
+          "excerpt": "In conclusion, our findings suggest that WTGPD can effectively alleviate IBS-D and improve intestinal barrier likely via inhibiting MAPK signal pathway and improving micobial dysbiosis.",
           "source_id": "39013542",
           "title": "WenTongGanPi decoction alleviates diarrhea-predominant irritable bowel syndrome by improving intestinal barrier.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/39013542/",
           "year": "2024"
         },
         {
-          "excerpt": "The intestinal microbiome is an important immune and metabolic organ in health and disease. Recent molecular and metabolomic approaches have provided a better characterization of different types of dysbiosis, including mucosa-adherent bacteria and functional changes in the microbiome. This article summarizes recent adv...",
+          "excerpt": "The intestinal microbiome is an important immune and metabolic organ in health and disease. Recent molecular and metabolomic approaches have provided a better characterization of different types of dysbiosis, including mucosa-adherent bacteria and functional changes in the microbiome.",
           "source_id": "33131916",
           "title": "Impact of Changes in Gastrointestinal Microbiota in Canine and Feline Digestive Diseases.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/33131916/",
           "year": "2021"
         },
         {
-          "excerpt": "e outlook for MC includes a better understanding of the immune response, genetics and the microbiome in disease pathogenesis along with progress in disease management through robust clinical trials.",
+          "excerpt": "The outlook for MC includes a better understanding of the immune response, genetics and the microbiome in disease pathogenesis along with progress in disease management through robust clinical trials.",
           "source_id": "34112810",
           "title": "Microscopic colitis.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/34112810/",
@@ -472,28 +472,28 @@
       "confidence": "low_medium",
       "evidence_for": [
         {
-          "excerpt": "e literature search was performed to assess the impact of sex steroid hormone, especially progesterone, on the (healthy and diseased) gastrointestinal tract. Overall, 37 articles were identified. Based on these we conclude that progesterone has a dose-dependent and sex-dependent effect on gastric emptying (especially i...",
+          "excerpt": "A comprehensive literature search was performed to assess the impact of sex steroid hormone, especially progesterone, on the (healthy and diseased) gastrointestinal tract. Overall, 37 articles were identified.",
           "source_id": "35253565",
           "title": "Impact of progesterone on the gastrointestinal tract: a comprehensive literature review.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/35253565/",
           "year": "2022"
         },
         {
-          "excerpt": "In vitro studies have shown that estrogen and progesterone can affect the contractile response and myoelectric activity of the gastrointestinal smooth muscle. The present study was designed to investigate the effect of sex steroid hormones on gastric emptying and gastrointestinal transit were assessed in rats 15 min af...",
+          "excerpt": "In vitro studies have shown that estrogen and progesterone can affect the contractile response and myoelectric activity of the gastrointestinal smooth muscle. The present study was designed to investigate the effect of sex steroid hormones on gastric emptying and gastrointestinal transit were assessed in rats 15 min after intragastric instillation of a test meal containing...",
           "source_id": "7840200",
           "title": "Effects of sex steroid hormones on gastric emptying and gastrointestinal transit in rats.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/7840200/",
           "year": "1995"
         },
         {
-          "excerpt": "them. Sex steroids mostly relax all the non-vascular smooth muscles, except androgens and progesterone, which contract colonic and urinary bladder smooth muscles, respectively. Corticosteroids also induce relaxation in bronchial and uterine tissues, but their actions on gastrointestinal and urinary bladder smooth muscl...",
+          "excerpt": "Sex steroids and glucocorticoids have several membrane receptors already identified to mediate their rapid actions. However, mineralocorticoids have no identified membrane receptors, although their rapid actions are also measurable.",
           "source_id": "38373593",
           "title": "Non-genomic actions of steroid hormones on the contractility of non-vascular smooth muscles.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/38373593/",
           "year": "2024"
         },
         {
-          "excerpt": "To study the dose-dependent of progesterone (P) effect and the interaction between the oxytocin (OT) and P on gastrointestinal motility. In order to monitor the gastric emptying and intestinal transit, the SD male rats were intubated via a catheter with normal saline (3 ml/kg) containing Na(2)(51)CrO(4) (0.5 microCi/ml...",
+          "excerpt": "To study the dose-dependent of progesterone (P) effect and the interaction between the oxytocin (OT) and P on gastrointestinal motility. In order to monitor the gastric emptying and intestinal transit, the SD male rats were intubated via a catheter with normal saline (3 ml/kg) containing Na(2)(51)CrO(4) (0.5 microCi/ml) and 10% charcoal.",
           "source_id": "11925620",
           "title": "Effects of progesterone on gastric emptying and intestinal transit in male rats.",
           "url": "https://pubmed.ncbi.nlm.nih.gov/11925620/",
@@ -525,7 +525,7 @@
       "topic": "progesterone_motility"
     }
   ],
-  "generated_at": "2026-05-22T13:51:55.774157+00:00",
+  "generated_at": "2026-05-22T15:11:03.874495+00:00",
   "mode": "literature_only_research_prototype",
   "runtime_effect": "none",
   "safety_boundary": {
