@@ -59,6 +59,7 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
     assert report["runtime_effect"] == "none"
     assert report["source_count"] == 5
     assert report["card_count"] >= 4
+    assert report["case_research_map"]["purpose"].startswith("Convert a personal GI scenario")
     assert "medication, probiotic, or supplement changes" in report["safety_boundary"]["forbidden"]
 
     topics = {card["topic"] for card in report["cards"]}
@@ -74,6 +75,12 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
         assert "Not medical advice" in card["safety_label"]
         assert "literature_review" in card["safe_next_tests"]
         assert card["evidence_for"]
+
+    branches = report["case_research_map"]["ranked_branches"]
+    assert branches[0]["topic"] == "colestipol_worsening_or_nonresponse"
+    assert branches[0]["what_would_change_confidence"]
+    assert branches[0]["clinician_safe_questions"]
+    assert "diagnosis" in report["case_research_map"]["not_for"]
 
 
 def test_unrelated_gi_records_do_not_create_cards() -> None:

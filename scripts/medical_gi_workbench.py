@@ -348,6 +348,158 @@ def validate_card_safety(card: GIHypothesisCard) -> None:
         raise ValueError(f"{card.card_id} safety label is missing: {', '.join(missing)}")
 
 
+CASE_FACTS = [
+    "Years of loose stools after an approximately six-month Bactrim/TMP-SMX exposure.",
+    "Colestipol exposure reportedly made symptoms worse rather than better.",
+    "Lower progesterone and lower omega-3 status are part of the scenario being explored.",
+    "The prototype has literature abstracts only; it has no labs, stool studies, medication history, diet history, exam findings, or clinician assessment.",
+]
+
+CASE_UNCERTAINTIES = [
+    "Whether the main driver is bile-acid physiology, post-antibiotic microbiome change, infection/inflammation, malabsorption, endocrine/motility biology, diet-response physiology, medication effect, or a mixed mechanism.",
+    "Whether colestipol worsening reflects bile-acid binder intolerance, wrong subtype assumption, timing/formulation effects, constipation-overflow dynamics, fermentation/bloating sensitivity, or a non-bile-acid mechanism.",
+    "Whether IBS-D is being used as a symptom label after exclusions or as a premature stopping point.",
+    "Whether progesterone or omega-3 status is causal, contributory, compensatory, or incidental.",
+]
+
+BRANCH_DETAILS = {
+    "colestipol_worsening_or_nonresponse": {
+        "rank": 1,
+        "why_it_matters": "This is a personal contradictory signal: a bile-acid binder made things worse. The prototype should preserve that contradiction instead of flattening it into a simple bile-acid explanation.",
+        "what_would_change_confidence": [
+            "Documented timing of symptom worsening after colestipol exposure and whether symptoms resolved after stopping it.",
+            "Objective bile-acid testing or clinician-reviewed surrogate markers, if available.",
+            "Evidence of binder adverse effects such as bloating, abdominal pain, constipation, or stool-pattern disruption.",
+        ],
+        "clinician_safe_questions": [
+            "Does worsening on colestipol argue against bile-acid diarrhea, or could it reflect intolerance or mixed mechanisms?",
+            "Are there bile-acid tests or surrogate markers that would be appropriate to review before treating this as BAM/BAD?",
+            "What non-bile-acid causes should be reconsidered because colestipol worsened symptoms?",
+        ],
+    },
+    "post_antibiotic_microbiome": {
+        "rank": 2,
+        "why_it_matters": "A long TMP-SMX/Bactrim exposure is a plausible upstream event for persistent microbiome and metabolite shifts, including bile-acid and carbohydrate-handling changes.",
+        "what_would_change_confidence": [
+            "Pre- and post-antibiotic symptom timeline with stool pattern, urgency, pain, bloating, and food-response changes.",
+            "Clinician-reviewed stool, inflammatory, infectious, or malabsorption workup results.",
+            "Longitudinal symptom data showing persistent post-antibiotic pattern rather than episodic unrelated flares.",
+        ],
+        "clinician_safe_questions": [
+            "Could a prolonged TMP-SMX course plausibly trigger persistent microbiome or metabolite changes in this case?",
+            "Which standard chronic diarrhea exclusions should be repeated or reviewed before assuming a functional label?",
+            "Would de-identified retrospective data help compare similar post-antibiotic cases?",
+        ],
+    },
+    "bile_acid_diarrhea": {
+        "rank": 3,
+        "why_it_matters": "Bile-acid diarrhea remains relevant, but colestipol worsening means it should be handled as one branch among several rather than the presumed answer.",
+        "what_would_change_confidence": [
+            "Objective bile-acid evidence or a clinician-reviewed rationale for empirical bile-acid sequestrant use.",
+            "Clear response pattern to bile-acid binder exposure, including adverse-effect pattern.",
+            "Evidence connecting microbiome disruption to bile-acid transformation changes in comparable populations.",
+        ],
+        "clinician_safe_questions": [
+            "What would distinguish bile-acid diarrhea from IBS-D-like symptoms in this situation?",
+            "Could bile-acid composition or signaling be abnormal even if colestipol was not tolerated?",
+            "What alternative explanations fit better if bile-acid binder exposure made symptoms worse?",
+        ],
+    },
+    "infectious_or_inflammatory_screen": {
+        "rank": 4,
+        "why_it_matters": "This branch prevents the prototype from accepting a vague IBS-D label before guideline-style exclusions are represented.",
+        "what_would_change_confidence": [
+            "Documented results for celiac screening, inflammatory markers, Giardia, C. difficile history, and other clinician-selected tests.",
+            "Presence or absence of alarm features such as blood, weight loss, anemia, nocturnal symptoms, or abnormal inflammatory labs.",
+            "Whether microscopic colitis, IBD, or malabsorption has been considered by a clinician.",
+        ],
+        "clinician_safe_questions": [
+            "Which chronic diarrhea exclusions have been completed, and which are still open?",
+            "Should microscopic colitis, celiac disease, Giardia, C. difficile history, or inflammatory bowel disease be revisited?",
+            "Are there alarm features that should change the urgency or workup path?",
+        ],
+    },
+    "ibs_d_functional_diarrhea": {
+        "rank": 5,
+        "why_it_matters": "IBS-D is useful as a syndrome label only if it helps organize mechanisms; it should not stop the research process.",
+        "what_would_change_confidence": [
+            "Evidence that standard exclusions were completed and symptoms match Rome-style syndrome criteria.",
+            "Subtyping data around pain, urgency, bloating, diet response, stress physiology, motility, and bile-acid signals.",
+            "Evidence that a narrower mechanism explains more of the case than the broad IBS-D bucket.",
+        ],
+        "clinician_safe_questions": [
+            "Is IBS-D being used here as a diagnosis of exclusion, a positive syndrome diagnosis, or a placeholder?",
+            "What narrower mechanisms should be separated under the IBS-D label?",
+            "What findings would make the IBS-D label less useful?",
+        ],
+    },
+    "progesterone_motility": {
+        "rank": 6,
+        "why_it_matters": "Progesterone is worth mapping, but the literature often points toward slowed motility, so the loose-stool link should be treated as indirect or subgroup-dependent.",
+        "what_would_change_confidence": [
+            "Symptom correlation with menstrual cycle, ovulation, luteal phase, perimenopause, pregnancy, or hormone therapy changes.",
+            "Clinician-reviewed hormone testing context rather than a single isolated value.",
+            "Evidence that motility changes track with hormone timing in the same person.",
+        ],
+        "clinician_safe_questions": [
+            "Could low progesterone be a modifier rather than a primary cause?",
+            "Would cycle-timed symptom tracking help clarify whether hormone timing matters?",
+            "Are there endocrine or gynecologic contexts that should be considered alongside GI workup?",
+        ],
+    },
+    "omega3_inflammation_tolerance": {
+        "rank": 7,
+        "why_it_matters": "Omega-3 status may connect to inflammatory biology, but omega-3 intake can also have GI tolerability issues, so the direction of the signal is uncertain.",
+        "what_would_change_confidence": [
+            "Whether low omega-3 status was measured reproducibly and in what clinical context.",
+            "Whether omega-3 intake changes correlate with worse or better GI symptoms.",
+            "Inflammatory, diet, and absorption context reviewed by a clinician.",
+        ],
+        "clinician_safe_questions": [
+            "Is low omega-3 status clinically meaningful here or just a background finding?",
+            "Could omega-3 intake itself worsen GI symptoms in this person?",
+            "What inflammation or absorption markers would make this branch more relevant?",
+        ],
+    },
+}
+
+
+def build_case_research_map(cards: list[GIHypothesisCard]) -> dict[str, Any]:
+    branches = []
+    for card in cards:
+        details = BRANCH_DETAILS.get(card.topic, {})
+        branches.append(
+            {
+                "topic": card.topic,
+                "rank": int(details.get("rank") or 99),
+                "confidence": card.confidence,
+                "evidence_count": len(card.evidence_for),
+                "research_question": card.hypothesis,
+                "why_it_matters": str(details.get("why_it_matters") or card.mechanism),
+                "what_would_change_confidence": list(details.get("what_would_change_confidence") or []),
+                "clinician_safe_questions": list(details.get("clinician_safe_questions") or []),
+                "research_only_next_steps": [
+                    "Run a targeted literature review for this branch and its strongest competing explanations.",
+                    "Use synthetic data simulation to test whether this mechanism would produce the observed pattern.",
+                    "Use de-identified retrospective data only under appropriate institutional controls.",
+                ],
+            }
+        )
+    branches.sort(key=lambda item: (int(item["rank"]), -int(item["evidence_count"]), str(item["topic"])))
+    return {
+        "purpose": "Convert a personal GI scenario into a safe research map: not a diagnosis, not treatment advice, and not a self-experiment plan.",
+        "known_facts": CASE_FACTS,
+        "uncertain_claims": CASE_UNCERTAINTIES,
+        "ranked_branches": branches,
+        "not_for": [
+            "diagnosis",
+            "medication, probiotic, supplement, or diet changes",
+            "replacing clinician evaluation",
+            "human or animal experiments",
+        ],
+    }
+
+
 def build_workbench(records: list[LiteratureRecord], *, topic: str = "chronic loose stools after prolonged antibiotic exposure") -> dict[str, Any]:
     cards = generate_hypothesis_cards(records)
     return {
@@ -369,6 +521,7 @@ def build_workbench(records: list[LiteratureRecord], *, topic: str = "chronic lo
         },
         "source_count": len(records),
         "card_count": len(cards),
+        "case_research_map": build_case_research_map(cards),
         "cards": [asdict(card) for card in cards],
     }
 

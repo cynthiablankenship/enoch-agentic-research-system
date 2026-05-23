@@ -155,6 +155,7 @@ def test_medical_gi_sample_report_requires_auth_and_returns_colestipol_card(tmp_
     data = response.json()
     assert data["schema_version"] == "medical_enoch_gi_workbench_v1"
     assert data["workbench_kind"] == "gi"
+    assert data["case_research_map"]["ranked_branches"][0]["topic"] == "colestipol_worsening_or_nonresponse"
     assert "colestipol_worsening_or_nonresponse" in {card["topic"] for card in data["cards"]}
     assert data["cards"][0]["review_status"] == "needs_review"
 
@@ -216,4 +217,5 @@ def test_control_dashboard_contains_medical_research_page(tmp_path: Path) -> Non
     assert "loadMedicalSample('migraine')" in response.text
     assert "loadMedicalSample('gi')" in response.text
     assert "medical-card-grid" in response.text
+    assert "renderCaseResearchMap" in response.text
     assert "/control/api/medical/${kind}/sample-report" in response.text
