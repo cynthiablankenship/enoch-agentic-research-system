@@ -113,6 +113,17 @@ TOPIC_TERMS = {
         "docosahexaenoic",
         "eicosapentaenoic",
     ),
+    "resistant_starch_microbiome_response": (
+        "resistant starch",
+        "retrograded",
+        "potato starch",
+        "potatoes",
+        "short-chain fatty acid",
+        "short chain fatty acid",
+        "butyrate",
+        "fermentation",
+        "bristol stool",
+    ),
 }
 
 
@@ -267,9 +278,14 @@ def _topic_hypothesis(topic: str) -> tuple[str, str]:
             "Lower progesterone is a speculative modifier worth mapping against GI motility literature, but it should not be treated as a proven cause of loose stools.",
             "Progesterone literature generally emphasizes slowed motility, gastric emptying, and gallbladder effects, making the diarrhea link likely indirect or subgroup-dependent.",
         )
+    if topic == "omega3_inflammation_tolerance":
+        return (
+            "Omega-3 response may define a hormone-skin-gut research branch because hormone symptoms and stool form reportedly improved while acne resurfaced.",
+            "Fatty-acid biology intersects inflammatory signaling, lipid metabolism, endocrine context, skin biology, and GI tolerability, so directionality is uncertain.",
+        )
     return (
-        "Low omega-3 status may belong in an inflammation and barrier-function evidence map, while omega-3 intake itself has GI tolerability caveats.",
-        "Fatty-acid biology intersects inflammatory signaling, but supplement exposure can also produce gastrointestinal adverse events in some literature.",
+        "Partial response to retrograded potatoes may point toward a resistant-starch, fermentation, or microbiome-metabolite branch worth testing against competing explanations.",
+        "Resistant starch can alter microbial fermentation and short-chain fatty acid production, but benefit can be partial and context-dependent.",
     )
 
 
@@ -309,6 +325,7 @@ def generate_hypothesis_cards(records: Iterable[LiteratureRecord]) -> list[GIHyp
             "ibs_d_functional_diarrhea",
             "progesterone_motility",
             "omega3_inflammation_tolerance",
+            "resistant_starch_microbiome_response",
         }:
             safe_next_tests.append("clinician_supervised_observational_diary")
         card_id = f"gi-{topic}-{hashlib.blake2s(topic.encode('utf-8'), digest_size=3).hexdigest()}"
@@ -351,7 +368,8 @@ def validate_card_safety(card: GIHypothesisCard) -> None:
 CASE_FACTS = [
     "Years of loose stools after an approximately six-month Bactrim/TMP-SMX exposure.",
     "Colestipol exposure reportedly made symptoms worse rather than better.",
-    "Lower progesterone and lower omega-3 status are part of the scenario being explored.",
+    "Omega-3 reportedly improved hormone-related issues and intermittently made stools more solid, but acne returned severely on the back and shoulders.",
+    "A 12-week daily retrograded potato/resistant-starch trial reportedly helped a little but did not fully resolve symptoms.",
     "The prototype has literature abstracts only; it has no labs, stool studies, medication history, diet history, exam findings, or clinician assessment.",
 ]
 
@@ -359,7 +377,8 @@ CASE_UNCERTAINTIES = [
     "Whether the main driver is bile-acid physiology, post-antibiotic microbiome change, infection/inflammation, malabsorption, endocrine/motility biology, diet-response physiology, medication effect, or a mixed mechanism.",
     "Whether colestipol worsening reflects bile-acid binder intolerance, wrong subtype assumption, timing/formulation effects, constipation-overflow dynamics, fermentation/bloating sensitivity, or a non-bile-acid mechanism.",
     "Whether IBS-D is being used as a symptom label after exclusions or as a premature stopping point.",
-    "Whether progesterone or omega-3 status is causal, contributory, compensatory, or incidental.",
+    "Whether omega-3 changed hormone signaling, inflammatory balance, lipid metabolism, skin biology, microbiome activity, bile-acid physiology, or several of these at once.",
+    "Whether partial response to retrograded potatoes reflects resistant-starch fermentation, short-chain fatty acid production, microbiome substrate response, motility change, or unrelated diet pattern changes.",
 ]
 
 BRANCH_DETAILS = {
@@ -406,7 +425,7 @@ BRANCH_DETAILS = {
         ],
     },
     "infectious_or_inflammatory_screen": {
-        "rank": 4,
+        "rank": 6,
         "why_it_matters": "This branch prevents the prototype from accepting a vague IBS-D label before guideline-style exclusions are represented.",
         "what_would_change_confidence": [
             "Documented results for celiac screening, inflammatory markers, Giardia, C. difficile history, and other clinician-selected tests.",
@@ -420,7 +439,7 @@ BRANCH_DETAILS = {
         ],
     },
     "ibs_d_functional_diarrhea": {
-        "rank": 5,
+        "rank": 7,
         "why_it_matters": "IBS-D is useful as a syndrome label only if it helps organize mechanisms; it should not stop the research process.",
         "what_would_change_confidence": [
             "Evidence that standard exclusions were completed and symptoms match Rome-style syndrome criteria.",
@@ -434,7 +453,7 @@ BRANCH_DETAILS = {
         ],
     },
     "progesterone_motility": {
-        "rank": 6,
+        "rank": 8,
         "why_it_matters": "Progesterone is worth mapping, but the literature often points toward slowed motility, so the loose-stool link should be treated as indirect or subgroup-dependent.",
         "what_would_change_confidence": [
             "Symptom correlation with menstrual cycle, ovulation, luteal phase, perimenopause, pregnancy, or hormone therapy changes.",
@@ -448,17 +467,31 @@ BRANCH_DETAILS = {
         ],
     },
     "omega3_inflammation_tolerance": {
-        "rank": 7,
-        "why_it_matters": "Omega-3 status may connect to inflammatory biology, but omega-3 intake can also have GI tolerability issues, so the direction of the signal is uncertain.",
+        "rank": 4,
+        "why_it_matters": "Omega-3 is no longer just a background lab detail: it reportedly improved hormone issues and stool form while acne returned, suggesting a connected hormone-skin-gut signal worth mapping.",
         "what_would_change_confidence": [
-            "Whether low omega-3 status was measured reproducibly and in what clinical context.",
-            "Whether omega-3 intake changes correlate with worse or better GI symptoms.",
-            "Inflammatory, diet, and absorption context reviewed by a clinician.",
+            "A timeline showing hormone symptoms, acne severity/location, and Bristol stool pattern before, during, and after omega-3 exposure.",
+            "Whether the acne return tracked dose, formulation, diet context, cycle timing, or other confounders.",
+            "Clinician-reviewed hormone, lipid, inflammatory, and dermatology context.",
         ],
         "clinician_safe_questions": [
-            "Is low omega-3 status clinically meaningful here or just a background finding?",
-            "Could omega-3 intake itself worsen GI symptoms in this person?",
-            "What inflammation or absorption markers would make this branch more relevant?",
+            "Could omega-3 improvement in hormone symptoms and stool form point to a hormone-skin-gut axis rather than a purely GI mechanism?",
+            "Could acne resurfacing reflect hormone normalization, androgen sensitivity, lipid/sebum changes, inflammation shifts, or another dermatologic mechanism?",
+            "What would be a safe way to document this pattern without changing supplements or medications outside clinical guidance?",
+        ],
+    },
+    "resistant_starch_microbiome_response": {
+        "rank": 5,
+        "why_it_matters": "Partial improvement from retrograded potatoes points toward a fermentable-substrate or microbiome-metabolite branch, especially short-chain fatty acid and stool-form pathways.",
+        "what_would_change_confidence": [
+            "A 12-week symptom timeline with potato amount, preparation/cooling pattern, stool form, urgency, bloating, gas, and abdominal pain.",
+            "Whether benefit appeared gradually, plateaued, or reversed after stopping the resistant-starch exposure.",
+            "Whether other fermentable fibers or starches caused similar benefit, no effect, or worsening.",
+        ],
+        "clinician_safe_questions": [
+            "Does partial response to resistant starch suggest a microbiome substrate-response pattern?",
+            "Could resistant starch help stool form while still worsening fermentation symptoms in some contexts?",
+            "What data would distinguish microbiome-metabolite benefit from a general diet change effect?",
         ],
     },
 }

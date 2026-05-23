@@ -50,6 +50,11 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
             "Omega-3 fatty acids and gastrointestinal tolerability",
             "Omega-3 fatty acid and fish oil literature reports gastrointestinal effects including diarrhea in some studies.",
         ),
+        _record(
+            "1006",
+            "Resistant starch and gut microbiome fermentation",
+            "Resistant starch and retrograded potato starch may affect gut microbiota, butyrate, short-chain fatty acid production, and stool patterns.",
+        ),
     ]
 
     report = build_workbench(records)
@@ -57,7 +62,7 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
     assert report["schema_version"] == "medical_enoch_gi_workbench_v1"
     assert report["mode"] == "literature_only_research_prototype"
     assert report["runtime_effect"] == "none"
-    assert report["source_count"] == 5
+    assert report["source_count"] == 6
     assert report["card_count"] >= 4
     assert report["case_research_map"]["purpose"].startswith("Convert a personal GI scenario")
     assert "medication, probiotic, or supplement changes" in report["safety_boundary"]["forbidden"]
@@ -69,6 +74,7 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
         "colestipol_worsening_or_nonresponse",
         "progesterone_motility",
         "omega3_inflammation_tolerance",
+        "resistant_starch_microbiome_response",
     }.issubset(topics)
     for card in report["cards"]:
         assert card["human_review_required"] is True
@@ -78,8 +84,12 @@ def test_build_workbench_generates_literature_only_gi_cards() -> None:
 
     branches = report["case_research_map"]["ranked_branches"]
     assert branches[0]["topic"] == "colestipol_worsening_or_nonresponse"
+    assert "omega3_inflammation_tolerance" in [branch["topic"] for branch in branches[:5]]
+    assert "resistant_starch_microbiome_response" in [branch["topic"] for branch in branches[:5]]
     assert branches[0]["what_would_change_confidence"]
     assert branches[0]["clinician_safe_questions"]
+    assert any("Omega-3 reportedly improved" in fact for fact in report["case_research_map"]["known_facts"])
+    assert any("retrograded potato" in fact for fact in report["case_research_map"]["known_facts"])
     assert "diagnosis" in report["case_research_map"]["not_for"]
 
 
